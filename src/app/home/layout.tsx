@@ -1,9 +1,6 @@
 import React from "react";
 import { MouseTooltipProvider } from "@/components/MouseTooltip";
-import {
-  DescriptionContext,
-  DescriptionProvider,
-} from "@/components/DescriptionContext";
+import { DescriptionProvider } from "@/components/DescriptionContext";
 
 export default function Layout({
   children,

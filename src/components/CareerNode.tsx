@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { cn } from "@/lib/utils";
 import { NodeData, Position } from "@/components/CareerGraph";
 import Icon from "@/components/Icon";
@@ -31,7 +31,7 @@ const CareerNode = ({
   const { setTooltipContent } = useTooltip();
   const {setDescription} = useDescription();
 
-  const handleMouseOver = (e: React.MouseEvent) => {
+  const handleMouseOver = () => {
     setHovered(true);
     if (data.tooltip) {
       setTooltipContent(data.tooltip);

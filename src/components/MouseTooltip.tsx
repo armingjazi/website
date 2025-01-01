@@ -11,7 +11,9 @@ import { Position } from "@/components/CareerGraph";
 
 const TooltipContext = createContext({
   tooltipContent: "",
-  setTooltipContent: (_: string) => {},
+  setTooltipContent: (tooltip: string) => {
+    console.warn(`TooltipProvider not found ${tooltip}`);
+  },
 });
 
 const MouseTooltipProvider = ({
@@ -33,7 +35,7 @@ const MouseTooltipProvider = ({
     }
 
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [tooltipContent]);
+  }, [tooltipContent, offset]);
 
   return (
     <TooltipContext.Provider value={{ tooltipContent, setTooltipContent }}>

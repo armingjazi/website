@@ -2,21 +2,20 @@
 
 import React, {
   useState,
-  useEffect,
   createContext,
   useContext,
-  useRef,
 } from "react";
-import { Position } from "@/components/CareerGraph";
 
 const DescriptionContext = createContext({
   description: "",
-  setDescription: (_: string) => {},
+  setDescription: (description: string) => {
+    console.warn(`DescriptionProvider not found ${description}`);
+  },
 });
 
 const DescriptionProvider = ({
   children,
-}: React.PropsWithChildren<{}>) => {
+}: React.PropsWithChildren) => {
   const [description, setDescription] = useState("");
 
   return (

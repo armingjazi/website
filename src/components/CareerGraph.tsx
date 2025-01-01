@@ -72,7 +72,7 @@ const CareerGraph = () => {
           "link",
           d3
             .forceLink<NodeData, SimulationLinkDatum<NodeData>>(links)
-            .id((d, i) => d.id)
+            .id((d) => d.id)
             .distance((d) =>
               (d.target as NodeData).affinity === (d.source as NodeData).id
                 ? LINK_MIN_DISTANCE
@@ -84,10 +84,10 @@ const CareerGraph = () => {
         .force("yForce", d3.forceY<NodeData>(-height).strength((d) => Y_FORCE * (d.xPos ?? 0)))
         .force(
           "charge",
-          d3.forceManyBody<NodeData>().strength((d, i) => d.charge),
+          d3.forceManyBody<NodeData>().strength((d) => d.charge),
         )
         .force("bounce", function(alpha) {
-          for (let node of nodes) {
+          for (const node of nodes) {
             if (!node.x || !node.y) continue;
             if (!node.vx || !node.vy) continue;
             if (node.x < ALLOWED_RADIUS) node.vx += alpha;
@@ -110,7 +110,7 @@ const CareerGraph = () => {
         "link",
         d3
           .forceLink<NodeData, SimulationLinkDatum<NodeData>>(links)
-          .id((d, i) => d.id)
+          .id((d) => d.id)
           .distance((d) =>
             (d.target as NodeData).affinity === (d.source as NodeData).id
               ? LINK_MIN_DISTANCE
@@ -121,7 +121,7 @@ const CareerGraph = () => {
       .force("xForce", d3.forceX<NodeData>(width).strength((d) => X_FORCE * (d.xPos ?? 0)))
       .force("yForce", d3.forceY<NodeData>(-height).strength((d) => Y_FORCE * (d.xPos ?? 0)))
       .force("bounce", function(alpha) {
-        for (let node of nodes) {
+        for (const node of nodes) {
           if (!node.x || !node.y) continue;
           if (!node.vx || !node.vy) continue;
           if (node.x < ALLOWED_RADIUS) node.vx += alpha;
@@ -133,7 +133,7 @@ const CareerGraph = () => {
       // Weak charge force just to prevent overlap
       .force(
         "charge",
-        d3.forceManyBody<NodeData>().strength((d, i) => d.charge),
+        d3.forceManyBody<NodeData>().strength((d) => d.charge),
       )
       // Center force to keep the graph centered
       .force("center", d3.forceCenter(width / 2, height / 2))
@@ -157,7 +157,7 @@ const CareerGraph = () => {
     return () => {
       simulationRef.current?.stop();
     };
-  }, [nodes]);
+  }, [nodes, links]);
 
   const handleNodeClick = (node: NodeData, nodeIndex: number) => {
     if(node.expanded || node.children?.length === 0)
