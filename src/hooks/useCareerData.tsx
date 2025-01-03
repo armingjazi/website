@@ -49,7 +49,7 @@ const useCareerData = (): CareerData => {
                 id: "Fluent",
                 title: "Fluent",
                 tooltip: "Ansys Fluent",
-                icon: 'AWS',
+                icon: 'Fluent',
                 description:
                   "Fluent is a software package for computational fluid dynamics. It is used for simulation, visualization and analysis of fluid flow and heat transfer.",
                 children: [],

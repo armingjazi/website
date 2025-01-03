@@ -61,7 +61,6 @@ const CareerGraph = () => {
       {x: 0, y: height/2, fx: 0, fy: height/2, id: "left", charge: 0},
       {x: width, y: height/2, fx: width, fy: height/2, id: "right", charge: 0},
       {x: width/2, y: 0, fx: width/2, fy: 0, id: "top", charge: 0},
-      {x: width/2, y: height, fx: width/2, fy: height, id: "bottom", charge: 0},
     ];
 
 
@@ -104,7 +103,7 @@ const CareerGraph = () => {
 
     // Update positions on tick
     simulationRef.current = d3
-      .forceSimulation<NodeData>(nodes)
+      .forceSimulation<NodeData>([...nodes, ...boundaryNodes])
       // Strong link force for equal distances
       .force(
         "link",

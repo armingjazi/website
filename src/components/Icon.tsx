@@ -16,7 +16,7 @@ import AWSIcon from "@/components/AWSIcon";
 import AzureIcon from "@/components/AzureIcon";
 import FluentIcon from "@/components/FluentIcon";
 
-const Icon = ({ name, size, strokeWidth }: {name: string, size?: number, strokeWidth?: number}) => {
+const Icon = ({ name, size, strokeWidth }: {name?: string, size?: number, strokeWidth?: number}) => {
 
   switch (name) {
     case "Cloud":
@@ -52,7 +52,7 @@ const Icon = ({ name, size, strokeWidth }: {name: string, size?: number, strokeW
     case "Research":
         return <SquareLibrary size={size} strokeWidth={strokeWidth} />;
     default:
-      return <Cloud strokeWidth={strokeWidth} size={size} />;
+      return <BookOpen strokeWidth={strokeWidth} size={size} />;
   }
 }
 

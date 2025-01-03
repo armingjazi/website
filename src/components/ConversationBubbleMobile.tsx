@@ -7,11 +7,11 @@ import remarkHtml from "remark-html";
 import remarkParse from "remark-parse";
 import { unified } from "unified";
 import { cn } from "@/lib/utils";
-import TypeWriter from "@/components/TypeWriter";
+import Typewriter from "@/components/TypeWriter";
 
 const processor = unified().use(remarkParse).use(remarkHtml);
 
-const ConversationBubble = ({
+const ConversationBubbleMobile = ({
   className,
   delay = 0,
   speed = 25,
@@ -35,21 +35,24 @@ const ConversationBubble = ({
     });
   }, [description]);
   return (
-    <div className={cn(className, "ml-10 mr-10 mt-5 fixed z-50")}>
-      <Avatar className="w-36 h-36 z-10 relative shadow-xl shadow-primary">
-        <AvatarImage src="/me-xs.jpg" className='border-2 rounded-full border-primary' />
-        <AvatarFallback>AJ</AvatarFallback>
-      </Avatar>
-      <div className="bg-popover-background/85 text-primary rounded-2xl rounded-tl-none border-2 border-primary/20 p-2 ml-32 mr-32 mt-[-48] z-20 relative w-[640px] shadow-2xl shadow-popover-background">
-        <TypeWriter
+    <div className={cn(className, "bottom-4 right-4 fixed z-50 flex-col flex items-end")}>
+      <div className="bg-popover-background/85 text-primary rounded-2xl mr-20 mb-[-20] rounded-br-none border-2 border-primary/20 p-2 mt-[-48] z-20 relative w-[320px] shadow-2xl shadow-popover-background">
+        <Typewriter
           text={text}
           delay={delay}
           speed={speed}
           className="text-xs leading-relaxed"
         />
       </div>
+      <Avatar className="w-24 h-24 z-10 relative shadow-xl shadow-primary">
+        <AvatarImage
+          src="/me-xs.jpg"
+          className="border-2 rounded-full border-primary"
+        />
+        <AvatarFallback>AJ</AvatarFallback>
+      </Avatar>
     </div>
   );
 };
 
-export default ConversationBubble;
+export default ConversationBubbleMobile;

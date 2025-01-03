@@ -29,7 +29,7 @@ const CareerNode = ({
 }) => {
   const [hovered, setHovered] = React.useState(false);
   const { setTooltipContent } = useTooltip();
-  const {setDescription} = useDescription();
+  const { setDescription } = useDescription();
 
   const handleMouseOver = () => {
     setHovered(true);
