@@ -11,6 +11,9 @@ import TypeWriter from "@/components/TypeWriter";
 
 const processor = unified().use(remarkParse).use(remarkHtml);
 
+export const INITIAL_TEXT =
+  "Hey there! 👋 Welcome to my interactive life story. Start clicking around, you will get a hang of how this works eventually 💀! You can also download my resume from the top right corner.";
+
 const ConversationBubble = ({
   className,
   delay = 0,
@@ -21,9 +24,7 @@ const ConversationBubble = ({
   speed?: number;
 }) => {
   const { description } = useDescription();
-  const [text, setText] = useState(
-    "Hey there! 👋 Welcome to my interactive life story. Start clicking around, you will get a hang of how this works eventually 💀!",
-  );
+  const [text, setText] = useState(INITIAL_TEXT);
 
   useEffect(() => {
     if (!description) {
@@ -37,7 +38,10 @@ const ConversationBubble = ({
   return (
     <div className={cn(className, "ml-10 mr-10 mt-5 fixed z-50")}>
       <Avatar className="w-36 h-36 z-10 relative shadow-xl shadow-primary">
-        <AvatarImage src="/me-xs.jpg" className='border-2 rounded-full border-primary' />
+        <AvatarImage
+          src="/me-xs.jpg"
+          className="border-2 rounded-full border-primary"
+        />
         <AvatarFallback>AJ</AvatarFallback>
       </Avatar>
       <div className="bg-popover-background/85 text-primary rounded-2xl rounded-tl-none border-2 border-primary/20 p-2 ml-32 mr-32 mt-[-48] z-20 relative w-[640px] shadow-2xl shadow-popover-background">

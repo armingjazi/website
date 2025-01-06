@@ -14,7 +14,7 @@ enum Modes {
 }
 
 const SwitchModes = () => {
-  const [mode, setMode] = useState(Modes.Graph);
+  const [mode, setMode] = useState(Modes.Tabular);
 
   return (
     <>

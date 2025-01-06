@@ -1,4 +1,3 @@
-
 export interface CareerNodeData {
   id: string;
   title: string;
@@ -7,14 +6,14 @@ export interface CareerNodeData {
   icon?: string;
   shortTitle?: string;
   children: CareerNodeData[];
-  color?: 'primary' | 'secondary';
+  color?: "primary" | "secondary";
   xPos?: number;
 }
 
 export interface CareerEdgeData {
   source: string;
   target: string;
-  color?: 'primary' | 'secondary';
+  color?: "primary" | "secondary";
 }
 
 export interface CareerData {
@@ -29,7 +28,8 @@ const useCareerData = (): CareerData => {
         color: "secondary",
         id: "2009",
         xPos: 0,
-        title: "Graduated from Amirkabir University of Technology in Tehran",
+        title:
+          "B.Sc. Mechanical Engineering - Amirkabir University of Technology in Tehran",
         description:
           "In 2009, I received my **Bachelor's degree** in Mechanical Engineering. Already during my studies, I started to learn the **german language**. So when the time came " +
           "to choose a country to move to, Germany felt like a natural choice. Up to this day I cannot conjure a more honest reason for moving to germany. Mostly however I have not come to regret my choice." +
@@ -39,7 +39,7 @@ const useCareerData = (): CareerData => {
           {
             id: "Bachelor's Thesis",
             title: "Bachelor's Thesis",
-            icon: 'GraduationCap',
+            icon: "GraduationCap",
             tooltip: "Bachelor's Thesis",
             description:
               "My **Bachelor's thesis** was my first real experience with programming. I developed a **simulation of air flow** of a transformer's box. " +
@@ -49,7 +49,7 @@ const useCareerData = (): CareerData => {
                 id: "Fluent",
                 title: "Fluent",
                 tooltip: "Ansys Fluent",
-                icon: 'Fluent',
+                icon: "Fluent",
                 description:
                   "Fluent is a software package for computational fluid dynamics. It is used for simulation, visualization and analysis of fluid flow and heat transfer.",
                 children: [],
@@ -58,7 +58,7 @@ const useCareerData = (): CareerData => {
                 id: "Finite Volume Method",
                 title: "Finite Volume Method",
                 tooltip: "Finite Volume Method",
-                icon: 'FVM',
+                icon: "FVM",
                 description:
                   "The finite volume method is a method for representing and evaluating partial differential equations in the form of algebraic equations.",
                 children: [],
@@ -67,7 +67,7 @@ const useCareerData = (): CareerData => {
                 id: "Navier Stokes",
                 title: "Navier Stokes",
                 tooltip: "Navier Stokes",
-                icon: 'NS',
+                icon: "NS",
                 description:
                   "The Navier-Stokes equations are a set of nonlinear partial differential equations that describe the flow of fluids.",
                 children: [],
@@ -76,7 +76,7 @@ const useCareerData = (): CareerData => {
                 id: "Heat Equation",
                 title: "Heat Equation",
                 tooltip: "Heat Equation",
-                icon: 'HeatEq',
+                icon: "HeatEq",
                 description:
                   "The heat equation is a parabolic partial differential equation that describes the distribution of heat (or variation in temperature) in a given region over time.",
                 children: [],
@@ -86,7 +86,7 @@ const useCareerData = (): CareerData => {
           {
             id: "Bachelor's Grade",
             title: "Bachelor's Grade",
-            icon: 'Award',
+            icon: "Award",
             description:
               "I graduated with a grade of 18.51 out of 20. Not top of the class, but close enough. Considering Amirkabir University of Technology is one of the top universities in Iran, I was quite happy with my grade, and that I survived the 4 years of rigorous studying.",
             children: [],
@@ -97,8 +97,7 @@ const useCareerData = (): CareerData => {
         id: "2012",
         xPos: 1,
         color: "secondary",
-        title:
-          "Graduated from RWTH University in Aachen Germany - Energy Engineering",
+        title: "M.Sc. Energy Engineering - RWTH University in Aachen Germany",
         shortTitle: "2012",
         description:
           "In 2012, I received my Master's degree in Energy Engineering. The program was a mix of mechanical engineering and electrical engineering with a focus on energy systems." +
@@ -110,8 +109,9 @@ const useCareerData = (): CareerData => {
           {
             id: "Master's Thesis",
             title: "Master's Thesis",
-            icon: 'GraduationCap',
-            description: "My thesis focused on optimal control strategies for reducing noise in a two-dimensional plane jet using adjoint-based optimization methods. I developed and implemented both first-order (Conjugate Gradient) and second-order (Newton Conjugate Gradient)" +
+            icon: "GraduationCap",
+            description:
+              "My thesis focused on optimal control strategies for reducing noise in a two-dimensional plane jet using adjoint-based optimization methods. I developed and implemented both first-order (Conjugate Gradient) and second-order (Newton Conjugate Gradient)" +
               "optimization algorithms to minimize noise in the jet's far-field while satisfying the Navier-Stokes equations as constraints. Through direct numerical simulation (DNS) and careful consideration of control intervals, I achieved significant noise reductions of up to 6 dB using various control strategies including mass, momentum, and internal energy controls." +
               "The work demonstrated that while stream-wise momentum control was particularly effective, all control types successfully reduced noise by subtly modifying turbulence structures rather than dramatically altering the overall flow. I also encountered and analyzed interesting challenges with the second-order optimization approach, particularly regarding negative Hessian curvature, and provided suggestions " +
               "for future research directions including improved cost functional definitions and alternative optimization methods." +
@@ -120,7 +120,7 @@ const useCareerData = (): CareerData => {
               {
                 id: "Adjoint-based Optimization",
                 title: "Adjoint-based Optimization",
-                icon: 'Adjoint',
+                icon: "Adjoint",
                 description:
                   "Adjoint-based optimization is a method for optimizing a function by calculating the gradient of the objective function with respect to the design variables.",
                 children: [],
@@ -128,7 +128,7 @@ const useCareerData = (): CareerData => {
               {
                 id: "Conjugate Gradient",
                 title: "Conjugate Gradient",
-                icon: 'CG',
+                icon: "CG",
                 description:
                   "The conjugate gradient method is an algorithm for the numerical solution of systems of linear equations.",
                 children: [],
@@ -136,7 +136,7 @@ const useCareerData = (): CareerData => {
               {
                 id: "Newton Conjugate Gradient",
                 title: "Newton Conjugate Gradient",
-                icon: 'NCG',
+                icon: "NCG",
                 description:
                   "The Newton conjugate gradient method is an algorithm for the numerical solution of systems of nonlinear equations.",
                 children: [],
@@ -144,7 +144,7 @@ const useCareerData = (): CareerData => {
               {
                 id: "Navier-Stokes",
                 title: "Navier-Stokes",
-                icon: 'NS',
+                icon: "NS",
                 description:
                   "The Navier-Stokes equations are a set of nonlinear partial differential equations that describe the flow of fluids.",
                 children: [],
@@ -152,7 +152,7 @@ const useCareerData = (): CareerData => {
               {
                 id: "Direct Numerical Simulation",
                 title: "Direct Numerical Simulation",
-                icon: 'DNS',
+                icon: "DNS",
                 description:
                   "Direct numerical simulation is a numerical technique for solving the Navier-Stokes equations without turbulence modeling.",
                 children: [],
@@ -162,21 +162,22 @@ const useCareerData = (): CareerData => {
           {
             id: "Master's Grade",
             title: "Master's Grade",
-            icon: 'Award',
+            icon: "Award",
             description:
               "I graduated with a grade of 1.7. In the German grading system, 1.0 is the best grade and 4.0 is the worst. I graduated top of my class.",
             children: [],
-          }
+          },
         ],
       },
       {
         id: "2015",
         color: "secondary",
         xPos: 2,
-        title: "Finished a two-year postgraduate program as research assistant at the Chair of Fluid Dynamics University of Siegen",
+        title: "Research Assistant at the University of Siegen",
         shortTitle: "2015",
         tooltip: "Research Assistant",
-        description: "After finishing my Master's degree, I was offered a position as a research assistant at the Chair of Fluid Dynamics at the University of Siegen. The position was part of a two-year postgraduate program that allowed me to work on my PhD while also teaching courses in fluid dynamics and heat transfer. " +
+        description:
+          "After finishing my Master's degree, I was offered a position as a research assistant at the Chair of Fluid Dynamics at the University of Siegen. The position was part of a two-year postgraduate program that allowed me to work on my PhD while also teaching courses in fluid dynamics and heat transfer. " +
           "The program was a great opportunity to deepen my knowledge in fluid dynamics and heat transfer and to gain experience in teaching and research. I also had the chance to work on several research projects and to publish papers in international journals. " +
           "Under the supervision of Prof. Dr. Holger Foysi, I worked on the development of numerical methods for the simulation of turbulent flows and heat transfer. I also had the opportunity to collaborate with other research groups and to attend conferences and workshops. " +
           "I also had the opportunity to teach courses in fluid dynamics and heat transfer, " +
@@ -185,28 +186,318 @@ const useCareerData = (): CareerData => {
           {
             id: "Research Assistant",
             title: "Research Assistant",
-            icon: 'Research',
+            icon: "Research",
             tooltip: "Research Assistant",
-            description: "This research role involved creating high-performance computational tools to model complex " +
-            "fluid-structure interactions. The work supported pioneering advances in fluid mechanics " +
+            description:
+              "This research role involved creating high-performance computational tools to model complex " +
+              "fluid-structure interactions. The work supported pioneering advances in fluid mechanics " +
               "through state-of-the-art simulation and numerical methods. ",
             children: [],
           },
           {
             id: "Teaching Assistant",
             title: "Teaching Assistant",
-            icon: 'Teaching',
+            icon: "Teaching",
             tooltip: "Teaching Assistant",
-            description: "As a teaching assistant, I was responsible for leading tutorials, grading assignments, " +
+            description:
+              "As a teaching assistant, I was responsible for leading tutorials, grading assignments, " +
               "and providing support to students. I also developed course materials and " +
               "assisted with the design and delivery of lectures." +
               "During this time, I consulted multiple master's students on their theses and helped them to develop their research skills.",
             children: [],
+          },
+        ],
+      },
+      {
+        id: "2019",
+        color: "secondary",
+        xPos: 3,
+        title: "Lead Software Engineer at Dear Reality",
+        shortTitle: "2019",
+        tooltip: "Lead Software Engineer",
+        description:
+          "In 2019, I joined Dear Reality as a Lead Software Engineer. Dear Reality is a software company that develops audio plugins for music production and virtual reality. " +
+          "As a Lead Software Engineer, I was responsible for leading a team of developers and designers to create innovative audio software products. I worked on a range of projects, " +
+          "including virtual reality audio plugins, spatial audio tools, and audio processing algorithms. I also collaborated with other teams to integrate our software products with " +
+          "third-party platforms and technologies. During my time at Dear Reality, I had the opportunity to work on cutting-edge audio technologies and to collaborate with " +
+          "industry-leading companies and artists. I also had the chance to mentor junior developers and to share my knowledge and expertise with the team.",
+        children: [
+          {
+            id: "C++",
+            title: "C++",
+            icon: "CPP",
+            tooltip: "C++",
+            description:
+              "During my time at Dear Reality, I worked extensively with C++ to develop audio plugins and software tools.",
+            children: [],
+          },
+          {
+            id: "Audio Plugins",
+            title: "Audio Plugins",
+            icon: "Audio",
+            tooltip: "Audio Plugins",
+            description:
+              "I developed a range of audio plugins for music production and virtual reality, including spatial audio tools, " +
+              "audio processing algorithms, and virtual reality audio plugins.",
+            children: [],
+          },
+          {
+            id: "C# Unity",
+            title: "C# Unity",
+            icon: "Unity",
+            tooltip: "C# Unity",
+            description:
+              "I also worked with C# and Unity to develop virtual reality audio plugins and spatial audio tools." +
+              "I collaborated with other teams to integrate our software products with third-party platforms and technologies.",
+            children: [],
+          },
+        ],
+      },
+      {
+        id: "2020",
+        color: "secondary",
+        xPos: 4,
+        title: "Senior Software Engineer at RISE Remote",
+        shortTitle: "2020",
+        tooltip: "Senior Software Engineer",
+        description:
+          "In 2020, I joined RISE Remote as a Senior Software Engineer. RISE Remote is a software company that develops remote collaboration tools for virtual teams. " +
+          "As a Senior Software Engineer, I was responsible for leading the development of new features and products, " +
+          "as well as maintaining and optimizing existing codebases. I worked on a range of projects, including video conferencing software, " +
+          "collaboration tools, and remote work solutions. I also collaborated with other teams to integrate our software products with " +
+          "third-party platforms and technologies. During my time at RISE Remote, I had the opportunity to work on cutting-edge remote collaboration technologies " +
+          "and to collaborate with industry-leading companies and organizations. I also had the chance to mentor junior developers and to share my knowledge and expertise with the team.",
+        children: [
+          {
+            id: "CI/CD",
+            title: "CI/CD",
+            icon: "CI",
+            tooltip: "CI/CD",
+            description:
+              "I implemented continuous integration and continuous deployment pipelines to automate the testing and deployment of software products in K8s.",
+            children: [],
+          },
+          {
+            id: "React Native Plugins",
+            title: "React Native Plugins",
+            icon: "React",
+            tooltip: "React Native Plugins",
+            description:
+              "I developed React Native plugins for video conferencing software and collaboration tools in iOS and Android.",
+            children: [],
+          },
+          {
+            id: "Built-in Quality",
+            title: "Built-in Quality",
+            icon: "Quality",
+            tooltip: "Built-in Quality",
+            description:
+              "I implemented built-in quality practices to ensure the reliability, security, and performance of software products through automated testing and code reviews.",
+            children: [],
+          },
+          {
+            id: "Github Actions",
+            title: "Github Actions",
+            icon: "Github",
+            tooltip: "Github Actions",
+            description:
+              "I used Github Actions to automate the testing and deployment of software products",
+            children: [],
+          },
+        ],
+      },
+      {
+        id: "2021",
+        color: "secondary",
+        xPos: 5,
+        title: "Chief Technology Officer at SCALARA",
+        shortTitle: "2021",
+        tooltip: "Chief Technology Officer",
+        description:
+          "In 2021, I joined SCALARA as a Chief Technology Officer. SCALARA is an innovative, compliance-driven SaaS tailored for the property managers. Automating complex" +
+          "property operations enables streamline workflows",
+        children: [
+          {
+            id: "Seed Funding",
+            title: "Seed Funding",
+            icon: "Funding",
+            tooltip: "Seed Funding",
+            description:
+              "I secured seed funding for SCALARA, enabling the company to accelerate product development and scale operations.",
+            children: [],
+          },
+          {
+            id: "Business Analysis",
+            title: "Business Analysis",
+            icon: "Analysis",
+            tooltip: "Business Analysis",
+            description:
+              "Collaborated in business analysis of property management, accounting, and marketplace",
+            children: [],
+          },
+          {
+            id: "ReactJS",
+            title: "ReactJS",
+            icon: "React",
+            tooltip: "ReactJS",
+            description:
+              "The frontend of SCALARA was built with ReactJS, a JavaScript library for building user interfaces.",
+            children: [],
+          },
+          {
+            id: "NestJS",
+            title: "NestJS",
+            icon: "Nest",
+            tooltip: "NestJS",
+            description:
+              "The backend of SCALARA was built with NestJS, a progressive Node.js framework for building efficient, reliable, and scalable server-side applications.",
+            children: [],
+          },
+          {
+            id: "Typescript",
+            title: "Typescript",
+            icon: "TS",
+            tooltip: "Typescript",
+            description:
+              "Typescript was used in the development of SCALARA to enable static typing and other advanced features.",
+            children: [],
+          },
+          {
+            id: "PostgreSQL",
+            title: "PostgreSQL",
+            icon: "Postgres",
+            tooltip: "PostgreSQL",
+            description:
+              "PostgreSQL was used as the database management system for SCALARA, providing a powerful, open-source relational database solution.",
+            children: [],
+          },
+          {
+            id: "Docker and Kubernetes",
+            title: "Docker and Kubernetes",
+            icon: "Docker",
+            tooltip: "Docker and Kubernetes",
+            description:
+              "Docker and Kubernetes were used to containerize and orchestrate the deployment of SCALARA, ensuring scalability and reliability.",
+            children: [],
+          },
+        ],
+      },
+      {
+        id: "2022",
+        color: "secondary",
+        xPos: 6,
+        title: "Engineering Manager - Web Applications at Open Reply",
+        shortTitle: "2022",
+        tooltip: "Engineering Manager - Web Applications",
+        description:
+          "In 2022, I joined Open Reply as an Engineering Manager for Web Applications. Open Reply is a leading digital services company that specializes in " +
+          "designing and implementing innovative solutions for clients in various industries. As an Engineering Manager, I am responsible for leading a team of developers " +
+          "and designers to create cutting-edge web applications and digital experiences. I work closely with clients to understand their needs and requirements, " +
+          "and I collaborate with other teams to deliver high-quality solutions that meet and exceed client expectations. I also mentor junior developers and " +
+          "provide guidance and support to help them grow and develop their skills. I am excited to be part of the Open Reply team and to work on challenging projects " +
+          "that push the boundaries of technology and creativity.",
+        children: [
+          {
+            id: "Team Leadership",
+            title: "Team Leadership",
+            icon: "Team",
+            tooltip: "Team Leadership",
+            description:
+              "I lead a team of developers and designers to create cutting-edge web applications and digital experiences.",
+            children: [],
+          },
+          {
+            id: "Client Collaboration",
+            title: "Client Collaboration",
+            icon: "Collaboration",
+            tooltip: "Client Collaboration",
+            description:
+              "I work closely with clients to understand their needs and requirements and collaborate with other teams to deliver high-quality solutions.",
+            children: [],
+          },
+          {
+            id: "Mentorship",
+            title: "Mentorship",
+            icon: "Mentorship",
+            tooltip: "Mentorship",
+            description:
+              "I mentor junior developers and provide guidance and support to help them grow and develop their skills.",
+            children: [],
+          },
+          {
+            id: "Node.js",
+            title: "Node.js",
+            icon: "Node",
+            tooltip: "Node.js",
+            description:
+              "I used Node.js to build scalable and efficient web applications for clients in various industries.",
+            children: [],
+          },
+          {
+            id: "React",
+            title: "React",
+            icon: "React",
+            tooltip: "React",
+            description:
+              "I used React to create interactive and dynamic user interfaces for web applications and digital experiences.",
+            children: [],
+          },
+          {
+            id: "Vue.js",
+            title: "Vue.js",
+            icon: "Vue",
+            tooltip: "Vue.js",
+            description:
+              "I used Vue.js to build responsive and user-friendly web applications for clients in various industries.",
+            children: [],
+          },
+          {
+            id: "Go",
+            title: "Go",
+            icon: "Go",
+            tooltip: "Go",
+            description:
+              "I used Go to build high-performance and scalable web applications for IoT applications.",
+            children: [],
+          },
+          {
+            id: "GraphQL",
+            title: "GraphQL",
+            icon: "GraphQL",
+            tooltip: "GraphQL",
+            description:
+              "I used GraphQL to query and manipulate data in web applications, providing a flexible and efficient way to interact with APIs.",
+            children: [],
+          },
+          {
+            id: "MongoDB",
+            title: "MongoDB",
+            icon: "MongoDB",
+            tooltip: "MongoDB",
+            description:
+              "I used MongoDB as the database management system for web applications, providing a scalable and flexible solution for storing and retrieving data.",
+            children: [],
+          },
+          {
+            id: "AWS",
+            title: "AWS",
+            icon: "AWS",
+            tooltip: "AWS",
+            description:
+              "I used AWS to deploy and manage web applications, leveraging cloud services to build scalable and reliable solutions.",
+            children: [],
           }
-        ]
-      }
+        ],
+      },
     ],
-    edges: [{ source: "2009", target: "2012", color: 'secondary' }, { source: "2012", target: "2015", color: 'secondary' }],
+    edges: [
+      { source: "2009", target: "2012", color: "secondary" },
+      { source: "2012", target: "2015", color: "secondary" },
+      { source: "2015", target: "2019", color: "secondary" },
+      { source: "2019", target: "2020", color: "secondary" },
+      { source: "2020", target: "2021", color: "secondary" },
+      { source: "2021", target: "2022", color: "secondary" },
+    ],
   };
 };
 

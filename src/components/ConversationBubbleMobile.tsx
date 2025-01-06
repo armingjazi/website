@@ -8,6 +8,7 @@ import remarkParse from "remark-parse";
 import { unified } from "unified";
 import { cn } from "@/lib/utils";
 import Typewriter from "@/components/TypeWriter";
+import { INITIAL_TEXT } from "@/components/ConversationBubble";
 
 const processor = unified().use(remarkParse).use(remarkHtml);
 
@@ -21,9 +22,7 @@ const ConversationBubbleMobile = ({
   speed?: number;
 }) => {
   const { description } = useDescription();
-  const [text, setText] = useState(
-    "Hey there! 👋 Welcome to my interactive life story. Start clicking around, you will get a hang of how this works eventually 💀!",
-  );
+  const [text, setText] = useState(INITIAL_TEXT);
 
   useEffect(() => {
     if (!description) {
@@ -35,7 +34,12 @@ const ConversationBubbleMobile = ({
     });
   }, [description]);
   return (
-    <div className={cn(className, "bottom-4 right-4 fixed z-50 flex-col flex items-end")}>
+    <div
+      className={cn(
+        className,
+        "bottom-4 right-4 fixed z-50 flex-col flex items-end",
+      )}
+    >
       <div className="bg-popover-background/85 text-primary rounded-2xl mr-20 mb-[-20] rounded-br-none border-2 border-primary/20 p-2 mt-[-48] z-20 relative w-[320px] shadow-2xl shadow-popover-background">
         <Typewriter
           text={text}

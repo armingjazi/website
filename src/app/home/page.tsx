@@ -1,13 +1,20 @@
 import React from "react";
 import SwitchModes from "@/components/SwitchModes";
+import DownloadPdf from "@/components/DownloadPdf";
 
 export default function Page() {
   return (
-    <div className='relative'>
+    <div className="relative">
       <div
         className="h-full bg-cover bg-center bg-fixed z-[-1] bg-no-repeat top-0 left-0 right-0 fixed"
-        style={{ backgroundImage: "url('/background.png')", backgroundAttachment: "fixed" }}
+        style={{
+          backgroundImage: "url('/background.png')",
+          backgroundAttachment: "fixed",
+        }}
       />
+      <div className='absolute right-32 top-3 z-50'>
+        <DownloadPdf />
+      </div>
       <SwitchModes />
     </div>
   );
