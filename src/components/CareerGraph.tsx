@@ -100,7 +100,7 @@ const CareerGraph = () => {
         .force("center", d3.forceCenter(width / 2, height / 2))
         .force("collision", d3.forceCollide().radius(30))
         .force("bounds", () => {
-          for (let node of nodes) {
+          for (const node of nodes) {
             // Bound x coordinate
             node.x = Math.max(
               MAX_RADIUS,
@@ -153,7 +153,7 @@ const CareerGraph = () => {
         );
       })
       .force("bounds", () => {
-        for (let node of nodes) {
+        for (const node of nodes) {
           // Bound x coordinate
           node.x = Math.max(
             MAX_RADIUS,
@@ -218,7 +218,7 @@ const CareerGraph = () => {
         ))}
 
         {nodes.map(
-          (node, index) =>
+          (node) =>
             positions[node.id] && (
               <CareerNode
                 key={node.id}
