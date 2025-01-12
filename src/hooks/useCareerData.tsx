@@ -532,7 +532,16 @@ const useCareerData = (): CareerData => {
             icon: "db",
             tooltip: "Big Data",
             description:
-              "I manage big data projects and ensure the scalability and performance of data solutions.",
+              "I manage big data projects and ensure the scalability and performance of data solutions. Improved UX in on Power BI Data Analytics and Data Visualizations for Daimler Trucks. · Improved client data insights by developing a survey analytics platform for PORSCHE",
+            children: [],
+          },
+          {
+            id: "CRM",
+            title: "CRM",
+            icon: "users",
+            tooltip: "CRM",
+            description:
+              "Managed and Developed 360 customer experience & CRM platforms for OBI, a leading European DIY retailer.",
             children: [],
           },
         ],
