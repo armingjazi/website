@@ -35,7 +35,7 @@ const TimelineNode = ({
               {node.shortTitle}
             </span>
           )}
-          {depth > 0 && <Icon name={node.icon} size={16} strokeWidth={1.5} />}
+          {depth > 0 && <Icon name={node.icon} size={20} strokeWidth={1.5} />}
           <span className="font-semibold z-10 text-left">{node.title}</span>
         </span>
         {hasChildren && (

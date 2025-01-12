@@ -12,6 +12,11 @@ import {
   BookOpen,
   NotebookPen,
   SquareLibrary,
+  Infinity,
+  BadgeCheck,
+  Github,
+  Bean,
+  BriefcaseBusiness, User
 } from "lucide-react";
 import AWSIcon from "@/components/AWSIcon";
 import AzureIcon from "@/components/AzureIcon";
@@ -19,6 +24,18 @@ import FluentIcon from "@/components/FluentIcon";
 import ReactIcon from "@/components/ReactIcon";
 import VueIcon from "@/components/VueIcon";
 import NestIcon from "@/components/NestIcon";
+import TSIcon from "@/components/TSIcon";
+import GoIcon from "@/components/GoIcon";
+import NodeIcon from "@/components/NodeIcon";
+import GraphQLIcon from "@/components/GraphQLIcon";
+import DockerIcon from "@/components/DockerIcon";
+import UnityIcon from "@/components/UnityIcon";
+import CIcon from "@/components/CIcon";
+
+export type IconProps = {
+  size?: number;
+  strokeWidth?: number;
+};
 
 const Icon = ({
   name,
@@ -68,6 +85,38 @@ const Icon = ({
       return <VueIcon size={size} strokeWidth={strokeWidth} />;
     case "Nest":
       return <NestIcon size={size} strokeWidth={strokeWidth} />;
+    case "CI":
+      return <Infinity size={size} strokeWidth={strokeWidth} />;
+    case "Quality":
+      return <BadgeCheck size={size} strokeWidth={strokeWidth} />;
+    case "Github":
+      return <Github size={size} strokeWidth={strokeWidth} />;
+    case "Seed":
+      return <Bean size={size} strokeWidth={strokeWidth} />;
+    case "Business":
+      return <BriefcaseBusiness size={size} strokeWidth={strokeWidth} />;
+    case "ts":
+      return <TSIcon size={size} strokeWidth={strokeWidth} />;
+    case "Go":
+      return <GoIcon size={size} strokeWidth={strokeWidth} />;
+    case "Node":
+      return <NodeIcon size={size} strokeWidth={strokeWidth} />;
+    case "GraphQL":
+      return <GraphQLIcon size={size} strokeWidth={strokeWidth} />;
+    case "Docker":
+      return <DockerIcon size={size} strokeWidth={strokeWidth} />;
+    case "db":
+      return <Database size={size} strokeWidth={strokeWidth} />;
+    case "unity":
+      return <UnityIcon size={size} strokeWidth={strokeWidth} />;
+    case "c++":
+      return <CIcon size={size} strokeWidth={strokeWidth} />;
+    case "platform":
+      return <Layers size={size} strokeWidth={strokeWidth} />;
+    case "team":
+      return <Users size={size} strokeWidth={strokeWidth} />;
+    case "user":
+      return <User size={size} strokeWidth={strokeWidth} />;
     default:
       return <BookOpen strokeWidth={strokeWidth} size={size} />;
   }

@@ -225,7 +225,7 @@ const useCareerData = (): CareerData => {
           {
             id: "C++",
             title: "C++",
-            icon: "CPP",
+            icon: "c++",
             tooltip: "C++",
             description:
               "During my time at Dear Reality, I worked extensively with C++ to develop audio plugins and software tools.",
@@ -244,7 +244,7 @@ const useCareerData = (): CareerData => {
           {
             id: "C# Unity",
             title: "C# Unity",
-            icon: "Unity",
+            icon: "unity",
             tooltip: "C# Unity",
             description:
               "I also worked with C# and Unity to develop virtual reality audio plugins and spatial audio tools." +
@@ -321,7 +321,7 @@ const useCareerData = (): CareerData => {
             id: "Seed Funding",
             title: "Seed Funding",
             icon: "Funding",
-            tooltip: "Seed Funding",
+            tooltip: "Seed",
             description:
               "I secured seed funding for SCALARA, enabling the company to accelerate product development and scale operations.",
             children: [],
@@ -330,7 +330,7 @@ const useCareerData = (): CareerData => {
             id: "Business Analysis",
             title: "Business Analysis",
             icon: "Analysis",
-            tooltip: "Business Analysis",
+            tooltip: "Business",
             description:
               "Collaborated in business analysis of property management, accounting, and marketplace",
             children: [],
@@ -356,7 +356,7 @@ const useCareerData = (): CareerData => {
           {
             id: "Typescript",
             title: "Typescript",
-            icon: "TS",
+            icon: "ts",
             tooltip: "Typescript",
             description:
               "Typescript was used in the development of SCALARA to enable static typing and other advanced features.",
@@ -365,7 +365,7 @@ const useCareerData = (): CareerData => {
           {
             id: "PostgreSQL",
             title: "PostgreSQL",
-            icon: "Postgres",
+            icon: "db",
             tooltip: "PostgreSQL",
             description:
               "PostgreSQL was used as the database management system for SCALARA, providing a powerful, open-source relational database solution.",
@@ -400,7 +400,7 @@ const useCareerData = (): CareerData => {
           {
             id: "Team Leadership",
             title: "Team Leadership",
-            icon: "Team",
+            icon: "team",
             tooltip: "Team Leadership",
             description:
               "I lead a team of developers and designers to create cutting-edge web applications and digital experiences.",
@@ -409,7 +409,7 @@ const useCareerData = (): CareerData => {
           {
             id: "Client Collaboration",
             title: "Client Collaboration",
-            icon: "Collaboration",
+            icon: "user",
             tooltip: "Client Collaboration",
             description:
               "I work closely with clients to understand their needs and requirements and collaborate with other teams to deliver high-quality solutions.",
@@ -486,7 +486,55 @@ const useCareerData = (): CareerData => {
             description:
               "I used AWS to deploy and manage web applications, leveraging cloud services to build scalable and reliable solutions.",
             children: [],
-          }
+          },
+        ],
+      },
+      {
+        id: "2024",
+        color: "secondary",
+        xPos: 7,
+        title: "Program Manager - Data and Platform at Open Reply",
+        shortTitle: "2024",
+        tooltip: "Program Manager - Data and Platform",
+        description:
+          "In 2024, I was promoted to Program Manager for Data and Platform at Open Reply. In this role, I am responsible for leading a team of developers, data scientists, and platform engineers to design and implement innovative solutions for clients in various industries. I work closely with clients to understand their data and platform needs and collaborate with other teams to deliver high-quality solutions. I also mentor developers and provide guidance and support to help them grow and develop their skills. I manage 6 Million Euros in revenue and 20 team members.",
+        children: [
+          {
+            id: "Team Management",
+            title: "Team Management",
+            icon: "team",
+            tooltip: "Team Management",
+            description:
+              "I lead a team of developers, data scientists, and platform engineers to design and implement innovative solutions for clients in various industries.",
+            children: [],
+          },
+          {
+            id: "Revenue Management",
+            title: "Revenue Management",
+            icon: "Revenue",
+            tooltip: "Revenue Management",
+            description:
+              "I manage 6 Million Euros in revenue and ensure the profitability and growth of the program.",
+            children: [],
+          },
+          {
+            id: "Platform Engineering",
+            title: "Platform Engineering",
+            icon: "platform",
+            tooltip: "Platform Engineering",
+            description:
+              "I oversee the design and implementation of platform solutions for clients in various industries.",
+            children: [],
+          },
+          {
+            id: "Big Data",
+            title: "Big Data",
+            icon: "db",
+            tooltip: "Big Data",
+            description:
+              "I manage big data projects and ensure the scalability and performance of data solutions.",
+            children: [],
+          },
         ],
       },
     ],
