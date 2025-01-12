@@ -554,6 +554,7 @@ const useCareerData = (): CareerData => {
       { source: "2019", target: "2020", color: "secondary" },
       { source: "2020", target: "2021", color: "secondary" },
       { source: "2021", target: "2022", color: "secondary" },
+      { source: "2022", target: "2024", color: "secondary" },
     ],
   };
 };
