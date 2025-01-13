@@ -9,19 +9,7 @@ import { unified } from "unified";
 import { cn } from "@/lib/utils";
 import Typewriter from "@/components/TypeWriter";
 import { INITIAL_TEXT } from "@/components/ConversationBubble";
-import {
-  ArrowDownLeft,
-  ArrowDownLeftFromCircle,
-  ArrowDownRight,
-  ArrowUpLeft,
-  ArrowUpRight,
-  ArrowUpRightFromCircle,
-  BadgeAlert,
-  ChevronDown,
-  Dot,
-  MinusIcon,
-  PlusIcon,
-} from "lucide-react";
+import { ArrowDownRight, ArrowUpLeft, Dot } from "lucide-react";
 
 const processor = unified().use(remarkParse).use(remarkHtml);
 
@@ -38,22 +26,26 @@ const ConversationBubbleMobile = ({
 }) => {
   const { description } = useDescription();
   const [text, setText] = useState(INITIAL_TEXT);
-  const [hasNewMessage, setHasNewMessage] = useState(false);
+  const [hasNewMessage, setHasNewMessage] = useState(true);
+  const [minimized, setMinimized] = useState(false);
 
   useEffect(() => {
     if (!description) {
       return;
     }
-    if (text !== INITIAL_TEXT) {
-      setHasNewMessage(true);
-    }
+    setHasNewMessage(true);
 
     processor.process(description).then((file) => {
       setText(String(file));
     });
   }, [description]);
 
-  const [minimized, setMinimized] = useState(false);
+  useEffect(() => {
+    if (!minimized) {
+      setHasNewMessage(false);
+    }
+  }, [minimized]);
+
   return (
     <div
       className={cn(
@@ -61,24 +53,24 @@ const ConversationBubbleMobile = ({
         "bottom-4 right-4 fixed z-50 flex-col flex items-end",
       )}
     >
-      {minimized ? (
+      {!minimized ? (
         <div className="bg-popover-background/85 text-primary rounded-2xl rounded-br-none border-2 border-primary/20 relative shadow-2xl shadow-popover-background p-2 z-20 w-[320px] sm:mr-20 sm:mb-[-20] sm:mt-[-48] ">
-          <ArrowDownRight
-            className="w-7 h-7 p-1 bg-popover-background/85 text-primary rounded-full border-2 border-primary/20 cursor-pointer mt-[-20] mr-[-20]"
-            onClick={() => setMinimized(false)}
-          />
           <Typewriter
             text={text}
             delay={delay}
             speed={speed}
             className="text-xs leading-relaxed p-2"
           />
+          <ArrowDownRight
+            className="w-7 h-7 p-1 bg-popover-background/85 text-primary rounded-full border-2 border-primary/20 cursor-pointer mr-[20] hover:bg-primary/20"
+            onClick={() => setMinimized(true)}
+          />
         </div>
       ) : (
         <>
           <ArrowUpLeft
-            className="w-7 h-7 p-1 bg-popover-background/85 text-primary rounded-full border-2 border-primary/20 cursor-pointer"
-            onClick={() => setMinimized(true)}
+            className="w-7 h-7 p-1 bg-popover-background/85 text-primary rounded-full border-2 border-primary/20 cursor-pointer hover:bg-primary/20"
+            onClick={() => setMinimized(false)}
           />
           {hasNewMessage && (
             <>
@@ -86,7 +78,6 @@ const ConversationBubbleMobile = ({
               <Dot className="absolute text-amber-700 h-12 w-12 animate-ping bottom-0.5 pointer-events-none" />
             </>
           )}
-
         </>
       )}
       {!hideAvatar ? (

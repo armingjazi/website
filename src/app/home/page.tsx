@@ -1,7 +1,5 @@
 import React from "react";
 import { ArrowUpRight, BookOpen, FileUser, Github, Globe, Linkedin } from "lucide-react";
-import ConversationBubbleMobile from "@/components/ConversationBubbleMobile";
-import ConversationBubble from "@/components/ConversationBubble";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Page() {

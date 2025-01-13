@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import DownloadPdf from "@/components/DownloadPdf";
-import SwitchModes from "@/components/SwitchModes";
 import React from "react";
 import { MouseTooltipProvider } from "@/components/MouseTooltip";
 
