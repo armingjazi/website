@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, BookOpen, FileUser, Github, Globe, Linkedin } from "lucide-react";
+import { ArrowUpRight, BookOpen, FileUser, Github, Linkedin } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Page() {
