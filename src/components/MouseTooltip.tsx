@@ -26,7 +26,11 @@ const MouseTooltipProvider = ({
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (tooltipRef.current) {
-        tooltipRef.current.style.transform = `translate(${e.clientX + (offset.x ?? 0)}px, ${e.clientY + (offset.y ?? 0)}px)`;
+        if (e.clientX + tooltipRef.current.clientWidth > window.innerWidth) {
+          tooltipRef.current.style.transform = `translate(${e.clientX - tooltipRef.current.clientWidth + (offset.x ?? 0)}px, ${e.clientY + (offset.y ?? 0)}px)`;
+        } else {
+          tooltipRef.current.style.transform = `translate(${e.clientX + (offset.x ?? 0)}px, ${e.clientY + (offset.y ?? 0)}px)`;
+        }
       }
     };
 

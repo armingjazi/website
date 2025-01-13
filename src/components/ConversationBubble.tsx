@@ -36,7 +36,7 @@ const ConversationBubble = ({
     });
   }, [description]);
   return (
-    <div className={cn(className, "ml-10 mr-10 mt-5 fixed z-50")}>
+    <div className={cn(className, "z-50")}>
       <Avatar className="w-36 h-36 z-10 relative shadow-xl shadow-primary">
         <AvatarImage
           src="/me-xs.jpg"

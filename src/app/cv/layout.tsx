@@ -1,4 +1,5 @@
 import React from "react";
+import { MouseTooltipProvider } from "@/components/MouseTooltip";
 import { DescriptionProvider } from "@/components/DescriptionContext";
 
 export default function Layout({
@@ -8,7 +9,9 @@ export default function Layout({
 }>) {
   return (
     <DescriptionProvider>
-      <div>{children}</div>
+      <MouseTooltipProvider offset={{ x: 10, y: 10 }}>
+        <div>{children}</div>
+      </MouseTooltipProvider>
     </DescriptionProvider>
   );
 }

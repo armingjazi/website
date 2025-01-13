@@ -19,7 +19,7 @@ const SwitchModes = () => {
   return (
     <>
       <div className="hidden sm:block">
-        <div className="absolute top-5 right-5 z-50 text-center justify-center flex flex-row">
+        <div className="absolute top-5 right-16 z-50 text-center justify-center flex flex-row">
           <Label id="view-mode" className={"text-sm mr-2"}>
             {mode === Modes.Tabular ? "Tabular" : "Graph"}
           </Label>
@@ -33,7 +33,7 @@ const SwitchModes = () => {
         </div>
         {mode === Modes.Graph && (
           <>
-            <ConversationBubble /> <CareerGraph />
+            <ConversationBubble className='ml-10 mr-10 mt-5 fixed' /> <CareerGraph />
           </>
         )}
         {mode === Modes.Tabular && (
@@ -44,7 +44,7 @@ const SwitchModes = () => {
         )}
       </div>
       <div className={"block sm:hidden"}>
-        <ConversationBubbleMobile />
+        <ConversationBubbleMobile hideAvatar />
         <CareerTabular />
       </div>
     </>
