@@ -16,7 +16,7 @@ import {
   BadgeCheck,
   Github,
   Bean,
-  BriefcaseBusiness, User
+  BriefcaseBusiness, User, HandCoins
 } from "lucide-react";
 import AWSIcon from "@/components/AWSIcon";
 import AzureIcon from "@/components/AzureIcon";
@@ -31,6 +31,8 @@ import GraphQLIcon from "@/components/GraphQLIcon";
 import DockerIcon from "@/components/DockerIcon";
 import UnityIcon from "@/components/UnityIcon";
 import CIcon from "@/components/CIcon";
+import PorscheIcon from "@/components/PorscheIcon";
+import OBIIcon from "@/components/OBIIcon";
 
 export type IconProps = {
   size?: number;
@@ -117,6 +119,12 @@ const Icon = ({
       return <Users size={size} strokeWidth={strokeWidth} />;
     case "user":
       return <User size={size} strokeWidth={strokeWidth} />;
+    case "porsche":
+      return <PorscheIcon size={size} strokeWidth={strokeWidth} />;
+    case "obi":
+      return <OBIIcon size={size} strokeWidth={strokeWidth} />;
+    case "price":
+      return <HandCoins size={size} strokeWidth={strokeWidth} />;
     default:
       return <BookOpen strokeWidth={strokeWidth} size={size} />;
   }

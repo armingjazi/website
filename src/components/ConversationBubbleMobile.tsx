@@ -34,6 +34,7 @@ const ConversationBubbleMobile = ({
       return;
     }
     setHasNewMessage(true);
+    setMinimized(false);
 
     processor.process(description).then((file) => {
       setText(String(file));

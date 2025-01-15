@@ -1,6 +1,7 @@
 export interface CareerNodeData {
   id: string;
   title: string;
+  hideTitle?: boolean;
   tooltip?: string;
   description?: string;
   icon?: string;
@@ -505,7 +506,7 @@ const useCareerData = (): CareerData => {
             icon: "team",
             tooltip: "Team Management",
             description:
-              "I lead a team of developers, data scientists, and platform engineers to design and implement innovative solutions for clients in various industries.",
+              "I lead a team of developers, data scientists, and platform engineers to design and implement innovative solutions for clients in various industries. I also oversee full stack delivery across mobile, infrastructure, frontend & backend development",
             children: [],
           },
           {
@@ -514,7 +515,7 @@ const useCareerData = (): CareerData => {
             icon: "Revenue",
             tooltip: "Revenue Management",
             description:
-              "I manage 6 Million Euros in revenue and ensure the profitability and growth of the program.",
+              "I manage 5 Million Euros in revenue and ensure the profitability and growth of the program.",
             children: [],
           },
           {
@@ -527,22 +528,62 @@ const useCareerData = (): CareerData => {
             children: [],
           },
           {
-            id: "Big Data",
-            title: "Big Data",
-            icon: "db",
-            tooltip: "Big Data",
-            description:
-              "I manage big data projects and ensure the scalability and performance of data solutions. Improved UX in on Power BI Data Analytics and Data Visualizations for Daimler Trucks. · Improved client data insights by developing a survey analytics platform for PORSCHE",
-            children: [],
-          },
-          {
-            id: "CRM",
-            title: "CRM",
-            icon: "users",
-            tooltip: "CRM",
+            id: "OBI",
+            title: "OBI",
+            hideTitle: true,
+            icon: "obi",
+            tooltip: "OBI",
             description:
               "Managed and Developed 360 customer experience & CRM platforms for OBI, a leading European DIY retailer.",
-            children: [],
+            children: [
+              {
+                id: "CRM",
+                title: "CRM",
+                icon: "team",
+                tooltip: "CRM",
+                description:
+                  "Managed and Developed 360 customer experience & CRM platforms for OBI, a leading European DIY retailer.",
+                children: [],
+              },
+              {
+                id: "Pricing Migration",
+                title: "Pricing",
+                icon: "price",
+                tooltip: "Pricing",
+                description:
+                  "Lead a team of two solution architects to migrate pricing data from legacy systems (many excel files) to a new pricing platform and SaaS. Oversaw the migration strategy, data mapping, data validation, and proper interfaces to reduce couplings and increase cohesion.",
+                children: [],
+              },
+            ],
+          },
+          {
+            id: "PORSCHE",
+            title: "Porsche",
+            hideTitle: true,
+            icon: "porsche",
+            tooltip: "PORSCHE",
+            description:
+              "In 2024, I built and managed a team who improved client data insights by developing a survey analytics platform for PORSCHE. The team consisted of 5 cross-functional team members from data engineers to ux/ui designers.",
+            children: [
+              {
+                id: "Azure Data Factory",
+                title: "Azure Data Factory",
+                icon: "Azure",
+                tooltip: "Azure Data Factory",
+                description:
+                  "We used Azure Data Factory to orchestrate and automate data movement and data transformation.",
+                children: [],
+              },
+              {
+                id: "Next.js",
+                title: "Next.js",
+                icon: "Next",
+                tooltip: "Next.js",
+                description:
+                  "We used Next.js to build a server-side rendered web application for the survey analytics platform. Enabling faster page loads and responsive design.",
+                children: [],
+              },
+            ],
           },
         ],
       },

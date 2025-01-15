@@ -36,7 +36,7 @@ const TimelineNode = ({
             </span>
           )}
           {depth > 0 && <Icon name={node.icon} size={20} strokeWidth={1.5} />}
-          <span className="font-semibold z-10 text-left">{node.title}</span>
+          {!node.hideTitle && <span className="font-semibold z-10 text-left">{node.title}</span>}
         </span>
         {hasChildren && (
           <ChevronDown
