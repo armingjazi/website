@@ -1,33 +1,43 @@
 import React from "react";
-import { ArrowUpRight, BookOpen, FileUser, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight, BookOpen, FileUser } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import GithubIcon from "@/components/GithubIcon";
+import LinkedInIcon from "@/components/LinkedInIcon";
+import Image from "next/image";
 
 export default function Page() {
   const links = [
     {
       name: "LinkedIn",
       url: "https://linkedin.com/in/armingjazi",
-      icon: <Linkedin className="w-6 h-6" />,
+      icon: <LinkedInIcon size={32} strokeWidth={1} />,
     },
     {
       name: "Code Portfolio @ GitHub",
       url: "https://github.com/armingjazi",
-      icon: <Github className="w-6 h-6" />,
+      icon: <GithubIcon size={32} />,
     },
     {
       name: "Managing Products @ Movement Archery",
       url: "https://movementarchery.com",
-      icon: <ArrowUpRight className="w-6 h-6" />,
+      icon: (
+        <Image
+          src="/movement-archery.png"
+          width={32}
+          height={32}
+          alt="movement-archery"
+        />
+      ),
     },
     {
       name: "My Writings @ Radical Thinking",
       url: "https://radical-thinking.com",
-      icon: <BookOpen className="w-6 h-6" />,
+      icon: <BookOpen className="w-8 h-8" strokeWidth={1.5} />,
     },
     {
       name: "CV",
       url: "/cv",
-      icon: <FileUser className="w-6 h-6" />,
+      icon: <FileUser className="w-8 h-8" strokeWidth={1.5} />,
     },
   ];
 
@@ -47,7 +57,7 @@ export default function Page() {
             <h2 className="text-xl ">Engineering Manager</h2>
           </div>
         </div>
-        <div className="space-y-4">
+        <div className="space-y-4 pt-3">
           {links.map((link) => (
             <a
               key={link.name}

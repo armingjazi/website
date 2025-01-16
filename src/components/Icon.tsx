@@ -14,7 +14,6 @@ import {
   SquareLibrary,
   Infinity,
   BadgeCheck,
-  Github,
   Bean,
   BriefcaseBusiness, User, HandCoins
 } from "lucide-react";
@@ -33,6 +32,7 @@ import UnityIcon from "@/components/UnityIcon";
 import CIcon from "@/components/CIcon";
 import PorscheIcon from "@/components/PorscheIcon";
 import OBIIcon from "@/components/OBIIcon";
+import GithubIcon from "@/components/GithubIcon";
 
 export type IconProps = {
   size?: number;
@@ -92,7 +92,7 @@ const Icon = ({
     case "Quality":
       return <BadgeCheck size={size} strokeWidth={strokeWidth} />;
     case "Github":
-      return <Github size={size} strokeWidth={strokeWidth} />;
+      return <GithubIcon size={size} strokeWidth={strokeWidth} />;
     case "Seed":
       return <Bean size={size} strokeWidth={strokeWidth} />;
     case "Business":
