@@ -96,3 +96,12 @@ body {
 .st3{fill:#CE3262;}
 .st4{fill:#00ACD7;}
 .st5{fill:#FFFFFF;}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
