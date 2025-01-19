@@ -63,11 +63,11 @@ const DigitalTwin = () => {
           you can ask anything.
         </h1>
         <h2 className="text-sm text-gray-500">
-          Be aware this llm does not have any strict guidelines, and is very
+          Be aware this LLM twin does not have any strict guidelines, and is very
           experimental
         </h2>
         <h2 className="text-sm text-gray-500">
-          I am working on better fine-tuned version for the future
+          I am working on a better fine-tuned version for the future
         </h2>
       </div>
 
@@ -79,9 +79,9 @@ const DigitalTwin = () => {
               message.role === "user" ? "flex-row-reverse" : ""
             }`}
           >
-            <div className="w-8 h-8 rounded-full bg-primary-200 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-full bg-primary-200 flex items-center justify-center mb-2">
               {message.role === "user" ? (
-                <UserRound className="w-8 h-8 border-[1.5px] rounded-full border-primary" strokeWidth={1.5} />
+                <UserRound className="w-9 h-9 border-[1.5px] p-1 rounded-full border-primary" strokeWidth={1.5} />
               ) : (
                 <MeAvatar className="w-9 h-9" />
               )}
@@ -99,10 +99,10 @@ const DigitalTwin = () => {
         ))}
         {isLoading && (
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center">
               <MeAvatar className="w-9 h-9" />
             </div>
-            <div className="flex space-x-1">
+            <div className="flex space-x-1 mt-5">
               <div className="w-2 h-2 bg-gray-600 rounded-full animate-bounce delay-75"></div>
               <div className="w-2 h-2 bg-gray-600 rounded-full animate-bounce delay-150"></div>
               <div className="w-2 h-2 bg-gray-600 rounded-full animate-bounce delay-300"></div>

@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Page() {
   const links = [
     {
-      name: "Digital Twin of Me",
+      name: "My Digital Twin",
       url: "/digital-twin",
       icon: <BrainCircuit className="w-8 h-8" strokeWidth={1.5} />,
     },
