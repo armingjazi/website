@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import DownloadPdf from "@/components/DownloadPdf";
 import React from "react";
 import { MouseTooltipProvider } from "@/components/MouseTooltip";
 
@@ -34,10 +33,6 @@ export default function RootLayout({
               }}
             />
             {children}
-
-            <div className="absolute right-3 top-3 z-50">
-              <DownloadPdf />
-            </div>
           </div>
         </MouseTooltipProvider>
       </body>

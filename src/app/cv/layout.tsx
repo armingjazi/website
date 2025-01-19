@@ -1,6 +1,6 @@
 import React from "react";
-import { MouseTooltipProvider } from "@/components/MouseTooltip";
 import { DescriptionProvider } from "@/components/DescriptionContext";
+import DownloadPdf from "@/components/DownloadPdf";
 
 export default function Layout({
   children,
@@ -9,9 +9,10 @@ export default function Layout({
 }>) {
   return (
     <DescriptionProvider>
-      <MouseTooltipProvider offset={{ x: 10, y: 10 }}>
-        <div>{children}</div>
-      </MouseTooltipProvider>
+      <div>{children}</div>
+      <div className="absolute right-3 top-3 z-50">
+        <DownloadPdf />
+      </div>
     </DescriptionProvider>
   );
 }
