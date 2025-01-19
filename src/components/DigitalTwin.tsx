@@ -1,7 +1,7 @@
 'use client';
 
 import React, { FormEvent, useState } from "react";
-import { Send, User } from 'lucide-react';
+import { SendHorizonal, UserRound } from "lucide-react";
 import { MeAvatar } from "@/components/Avatar";
 
 interface Message {
@@ -81,7 +81,7 @@ const DigitalTwin = () => {
           >
             <div className="w-8 h-8 rounded-full bg-primary-200 flex items-center justify-center">
               {message.role === "user" ? (
-                <User className="w-5 h-5" />
+                <UserRound className="w-8 h-8 border-[1.5px] rounded-full border-primary" strokeWidth={1.5} />
               ) : (
                 <MeAvatar className="w-9 h-9" />
               )}
@@ -130,7 +130,7 @@ const DigitalTwin = () => {
             disabled={isLoading || !input.trim()}
             className="p-2 bg-secondary text-secondary-foreground rounded-lg disabled:opacity-50 hover:bg-secondary/50 transition-colors"
           >
-            <Send className="w-5 h-5" />
+            <SendHorizonal className="w-5 h-5" />
           </button>
         </form>
       </div>

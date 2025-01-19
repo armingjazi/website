@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, BookOpen, FileUser } from "lucide-react";
+import { ArrowUpRight, BookOpen, BrainCircuit, FileUser } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import GithubIcon from "@/components/GithubIcon";
 import LinkedInIcon from "@/components/LinkedInIcon";
@@ -7,6 +7,11 @@ import Image from "next/image";
 
 export default function Page() {
   const links = [
+    {
+      name: "Digital Twin of Me",
+      url: "/digital-twin",
+      icon: <BrainCircuit className="w-8 h-8" strokeWidth={1.5} />,
+    },
     {
       name: "LinkedIn",
       url: "https://linkedin.com/in/armingjazi",
