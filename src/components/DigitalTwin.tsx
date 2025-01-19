@@ -63,8 +63,10 @@ const DigitalTwin = () => {
           you can ask anything.
         </h1>
         <h2 className="text-sm text-gray-500">
-          Be aware this LLM twin does not have any strict guidelines, and is very
-          experimental
+          ⚠️ Be aware this LLM twin does not have any strict guidelines.
+        </h2>
+        <h2 className="text-sm text-gray-500">
+            As such it is not meant for an authentic conversation, but only to showcase my work.
         </h2>
         <h2 className="text-sm text-gray-500">
           I am working on a better fine-tuned version for the future
@@ -76,10 +78,10 @@ const DigitalTwin = () => {
           <div
             key={index}
             className={`flex items-start gap-2 ${
-              message.role === "user" ? "flex-row-reverse" : ""
+              message.role === "user" ? "flex-row-reverse items-center" : ""
             }`}
           >
-            <div className="w-9 h-9 rounded-full bg-primary-200 flex items-center justify-center mb-2">
+            <div className="w-9 h-9 rounded-full bg-primary-200 flex items-center justify-center">
               {message.role === "user" ? (
                 <UserRound className="w-9 h-9 border-[1.5px] p-1 rounded-full border-primary" strokeWidth={1.5} />
               ) : (
