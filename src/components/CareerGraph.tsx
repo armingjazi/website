@@ -25,9 +25,7 @@ export type LinkData = SimulationLinkDatum<NodeData> & {
 const MIN_RADIUS = 35;
 const MAX_RADIUS = 40;
 const CHARGE = -100;
-const LINK_STRENGTH = 0.5;
-const LINK_MIN_DISTANCE = 10;
-const LINK_MAX_DISTANCE = 50;
+const LINK_STRENGTH = 1;
 const X_FORCE = 0.1;
 const ALPHA = 0.3;
 const ALPHA_DECAY = 0.5;
@@ -57,46 +55,18 @@ const CareerGraph = () => {
 
     const width = svgRef.current.clientWidth;
     const height = svgRef.current.clientHeight;
-    const boundaryNodes = [
-      { x: 0, y: height / 2, fx: 0, fy: height / 2, id: "left", charge: -10 },
-      {
-        x: width,
-        y: height / 2,
-        fx: width,
-        fy: height / 2,
-        id: "right",
-        charge: -10,
-      },
-      { x: width / 2, y: 0, fx: width / 2, fy: 0, id: "top", charge: -10 },
-      {
-        x: width / 2,
-        y: height,
-        fx: width / 2,
-        fy: height,
-        id: "bottom",
-        charge: -10,
-      },
-    ];
 
     if (simulationRef.current) {
       simulationRef.current
-        .nodes([...nodes, ...boundaryNodes])
+        .nodes(nodes)
         .force(
           "link",
           d3
             .forceLink<NodeData, SimulationLinkDatum<NodeData>>(links)
             .id((d) => d.id)
-            .distance((d) =>
-              (d.target as NodeData).affinity === (d.source as NodeData).id
-                ? LINK_MIN_DISTANCE
-                : LINK_MAX_DISTANCE,
-            )
             .strength(LINK_STRENGTH),
         )
-        .force(
-          "xForce",
-          d3.forceX<NodeData>(width).strength((d) => X_FORCE * (d.xPos ?? 0)),
-        )
+        .force("charge", d3.forceManyBody<NodeData>().strength((d) => d.charge))
         .force("center", d3.forceCenter(width / 2, height / 2))
         .force("collision", d3.forceCollide().radius(30))
         .force("bounds", () => {
@@ -119,20 +89,16 @@ const CareerGraph = () => {
 
     // Update positions on tick
     simulationRef.current = d3
-      .forceSimulation<NodeData>([...nodes, ...boundaryNodes])
+      .forceSimulation<NodeData>(nodes)
       // Strong link force for equal distances
       .force(
         "link",
         d3
           .forceLink<NodeData, SimulationLinkDatum<NodeData>>(links)
           .id((d) => d.id)
-          .distance((d) =>
-            (d.target as NodeData).affinity === (d.source as NodeData).id
-              ? LINK_MIN_DISTANCE
-              : LINK_MAX_DISTANCE,
-          )
           .strength(LINK_STRENGTH),
       )
+      .force("charge", d3.forceManyBody<NodeData>().strength((d) => d.charge))
       .force(
         "xForce",
         d3.forceX<NodeData>(width).strength((d) => X_FORCE * (d.xPos ?? 0)),
@@ -185,6 +151,7 @@ const CareerGraph = () => {
       min_radius: (node.min_radius ?? MIN_RADIUS) - 5,
       max_radius: (node.max_radius ?? MAX_RADIUS) - 5,
       ...child,
+      xPos: 0,
     }));
 
     if (!newNodes) return;

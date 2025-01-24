@@ -80,7 +80,7 @@ const CareerNode = ({
           className={cn(
             "transition-all duration-300 peer stroke-primary stroke-2",
             disabled ? "" : "hover:fill-accent",
-            data.color === "secondary" ? 'fill-secondary' : "fill-primary",
+            data.color === "secondary" ? 'fill-secondary' : "fill-muted-foreground",
           )}
         />
         {data.shortTitle && (
@@ -113,7 +113,7 @@ const CareerNode = ({
               />
           </foreignObject>
         )}
-        {data.icon && (
+        {data.icon && !data.hideIcon && (
           <foreignObject
             x={-12}
             y={-12}
@@ -127,6 +127,20 @@ const CareerNode = ({
             <Icon name={data.icon} size={22} strokeWidth={1.5} />
           </foreignObject>
         )}
+        {
+          data.hideIcon && data.title && (
+            <text
+              className={cn(
+                "text-[0.625rem] font-semibold text-center fill-primary-foreground pointer-events-none",
+              )}
+              textAnchor="middle"
+              y="4"
+              aria-hidden="true"
+            >
+              {data.title}
+            </text>
+          )
+        }
       </g>
     </g>
   );

@@ -6,6 +6,7 @@ export interface CareerNodeData {
   description?: string;
   icon?: string;
   shortTitle?: string;
+  hideIcon?: boolean;
   children: CareerNodeData[];
   color?: "primary" | "secondary";
   xPos?: number;
@@ -532,6 +533,7 @@ const useCareerData = (): CareerData => {
             title: "OBI",
             hideTitle: true,
             icon: "obi",
+            hideIcon: true,
             tooltip: "OBI",
             description:
               "Managed and Developed 360 customer experience & CRM platforms for OBI, a leading European DIY retailer.",
@@ -558,9 +560,10 @@ const useCareerData = (): CareerData => {
           },
           {
             id: "PORSCHE",
-            title: "Porsche",
+            title: "PORSCHE",
             hideTitle: true,
             icon: "porsche",
+            hideIcon: true,
             tooltip: "PORSCHE",
             description:
               "In 2024, I built and managed a team who improved client data insights by developing a survey analytics platform for PORSCHE. The team consisted of 5 cross-functional team members from data engineers to ux/ui designers.",
