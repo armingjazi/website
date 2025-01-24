@@ -41,7 +41,7 @@ export default function Page() {
     },
     {
       name: "CV",
-      url: "/cv",
+      url: "/cv?mode=tabular",
       icon: <FileUser className="w-8 h-8" strokeWidth={1.5} />,
     },
   ];

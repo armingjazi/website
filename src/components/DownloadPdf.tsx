@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { useTooltip } from "@/components/MouseTooltip";
-import React from "react";
+import React, { useEffect } from "react";
 
 const DownloadPdf = () => {
   const { setTooltipContent } = useTooltip();
@@ -13,6 +13,13 @@ const DownloadPdf = () => {
     link.download = "cv.pdf";
     link.click();
   };
+
+  useEffect(() => {
+    return () => {
+      setTooltipContent("");
+    }
+  }, [setTooltipContent]);
+
 
   const handleMouseOver = () => {
     setTooltipContent("Download CV as PDF");
