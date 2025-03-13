@@ -13,6 +13,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Armin Jazi - Portfolio",
   description: "Armin Jazi's Portfolio",
+  icons: {
+    icon:{
+      url: "/favicon.svg",
+      type: "image/svg+xml",
+    }
+  }
 };
 
 export default function RootLayout({
