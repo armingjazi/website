@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, BookOpen, BrainCircuit, FileUser } from "lucide-react";
+import { ArrowUpRight, BookOpen, BrainCircuit, Coffee, FileUser } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import GithubIcon from "@/components/GithubIcon";
 import LinkedInIcon from "@/components/LinkedInIcon";
@@ -38,6 +38,11 @@ export default function Page() {
       name: "My Writings @ Radical Thinking",
       url: "https://radical-thinking.com",
       icon: <BookOpen className="w-8 h-8" strokeWidth={1.5} />,
+    },
+    {
+      name: "My Writings @ Medium",
+      url: "https://medium.com/@armin.gjazi",
+      icon: <Coffee className="w-8 h-8" strokeWidth={1.5} />,
     },
     {
       name: "CV",
