@@ -12,39 +12,41 @@ export function Reference({
   alt,
   url,
   details,
-  priority = false,
 }: {
   title: string;
   src: string;
   alt: string;
   url: string;
   details: string;
-  priority?: boolean;
 }) {
+  const containerRef = useRef(null);
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
+  const { scrollYProgress } = useScroll({ target: ref, container: containerRef });
   const y = useParallax(scrollYProgress, 300);
   return (
-    <section className="img-container h-screen snap-start flex justify-center items-center relative">
+    <section ref={containerRef} className="h-screen snap-start flex justify-center items-center relative overflow-hidden">
       <Link
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute w-full h-full"
+        className="absolute w-full h-full z-10"
       />
-      <div ref={ref}>
-        <Image
+      <div ref={ref} className="relative">
+        <motion.img
           src={src}
           alt={alt}
-          width={720}
-          height={297}
-          priority={priority}
+          width={600}
+          height={247}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         />
       </div>
       <div className={"flex flex-row"}>
         <motion.div
-          initial={{ visibility: "hidden" }}
-          animate={{ visibility: "visible" }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
           style={{ y }}
           className="absolute inline-block top-[calc(50%)] m-0 left-[calc(50%_+_50px)]"
         >

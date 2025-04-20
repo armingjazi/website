@@ -16,7 +16,6 @@ const links = [
       " Neural network enthusiasts studying the latest trends as they develop" +
       " A digital experience designer and a digital artist with a focus on the human experience.",
     tooltip: "Click to see my CV",
-    priority: true,
   },
   {
     name: "Web Docker",
@@ -65,7 +64,7 @@ export default function Page() {
   });
 
   return (
-    <div>
+    <div className='relative'>
       {links.map((link) => (
         <Reference
           key={link.name}
@@ -74,7 +73,6 @@ export default function Page() {
           src={link.img}
           url={link.url}
           details={link.details}
-          priority={link.priority}
         />
       ))}
       <motion.div className="fixed left-0 right-0 h-[5px] bottom-[50px] bg-[#8df0cc]" style={{ scaleX }} />
