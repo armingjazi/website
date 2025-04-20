@@ -47,12 +47,12 @@ export function Reference({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           style={{ y }}
-          className="absolute inline-block top-[calc(20%)] md:top-[calc(50%)] m-0 left-[calc(50%_+_20px)] md:left-[calc(50%_+_50px)]"
+          className="absolute inline-block top-[calc(12%)] md:top-[calc(50%)] m-0 left-[calc(50%_+_20px)] md:left-[calc(50%_+_50px)]"
         >
           <h2 className="text-primary text-[22px] md:text-[48px] lg:text-[64px] xl:text-[72px] leading-[1.2] tracking-wider">
             {title}
           </h2>
-          <p className="pr-2 text-white text-[12px] md:text-[14px]">{details}</p>
+          <p className="pr-2 text-white text-[12px] sm:text-[14px] md:text-[16px]">{details}</p>
         </motion.div>
       </div>
     </section>

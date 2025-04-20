@@ -2,6 +2,7 @@
 import React from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Reference } from "@/components/Reference";
+import ScrollHint from "@/components/ScrollHint";
 
 const links = [
   {
@@ -74,6 +75,7 @@ export default function Page() {
           details={link.details}
         />
       ))}
+      <ScrollHint />
       <motion.div className="fixed left-0 right-0 h-[5px] bottom-[50px] bg-[#8df0cc]" style={{ scaleX }} />
     </div>
   );
