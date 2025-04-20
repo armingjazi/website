@@ -31,6 +31,7 @@ const DownloadPdf = () => {
   return (
     <Button
       variant="outline"
+      className="bg-secondary"
       size="icon"
       onClick={downloadPdf}
       onMouseOver={handleMouseOver}

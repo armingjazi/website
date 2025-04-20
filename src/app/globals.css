@@ -1,10 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  scroll-snap-type: y mandatory;
 }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-jost-sans);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -13,11 +18,11 @@ body {
     --card-foreground: 34 14% 98%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --popover-background: 250 78% 91%;
-    --primary: 240 5.9% 10%;
+    --popover-background: 231 38% 39%;
+    --primary: 158 77% 75%;
     --primary-foreground: 0 0% 98%;
     --secondary: 231 38% 39%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 80%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
     --accent: 240 3% 75%;
@@ -86,7 +91,7 @@ body {
 }
 
 .typewriter-content a {
-    @apply inline text-secondary underline;
+    @apply inline text-secondary-foreground underline;
 }
 
 .st0{fill:#2DBCAF;}

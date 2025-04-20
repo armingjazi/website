@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { CareerNodeData } from "@/hooks/useCareerData";
 import Icon from "@/components/Icon";
 import { useDescription } from "@/components/DescriptionContext";
+import { motion } from "framer-motion";
 
 const TimelineNode = ({
   node,
@@ -24,7 +25,12 @@ const TimelineNode = ({
   };
 
   return (
-    <div className={`ml-${depth * 4} z-10 flex flex-col`}>
+    <motion.div
+      className={`ml-${depth * 4} z-10 flex flex-col`}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.5 }}
+    >
       <button
         onClick={handleClick}
         className="z-10 w-full py-3 flex items-center justify-between cursor-pointer hover:bg-secondary/10 pl-2"
@@ -36,7 +42,9 @@ const TimelineNode = ({
             </span>
           )}
           {depth > 0 && <Icon name={node.icon} size={20} strokeWidth={1.5} />}
-          {!node.hideTitle && <span className="font-semibold z-10 text-left">{node.title}</span>}
+          {!node.hideTitle && (
+            <span className="font-semibold z-10 text-left">{node.title}</span>
+          )}
         </span>
         {hasChildren && (
           <ChevronDown
@@ -60,7 +68,7 @@ const TimelineNode = ({
           <hr className="h-px w-full border-t-secondary/85 my-4" />
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

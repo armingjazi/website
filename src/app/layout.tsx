@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Jost } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import { MouseTooltipProvider } from "@/components/MouseTooltip";
 
-const inter = Inter({
-  variable: "--font-inter",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const nunitoSans = Jost({
+  variable: "--font-jost-sans",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -28,16 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} antialiased`}>
         <MouseTooltipProvider offset={{ x: 10, y: 20 }}>
-          <div className="relative">
-            <div
-              className="h-full bg-cover bg-center bg-fixed z-[-1] bg-no-repeat top-0 left-0 right-0 fixed"
-              style={{
-                backgroundImage: "url('/background.png')",
-                backgroundAttachment: "fixed",
-              }}
-            />
+          <div className="h-full bg-cover bg-center bg-fixed min-h-screen text-secondary-foreground leading-relaxed tracking-wider bg-radial-dark">
             {children}
           </div>
         </MouseTooltipProvider>

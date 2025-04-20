@@ -8,7 +8,7 @@ const GraphqlIcon = ({ size, strokeWidth }: IconProps) => {
       width={size}
       height={size}
       strokeWidth={strokeWidth}
-      fill="#000000"
+      fill="white"
     >
       <path
         fillRule="evenodd"

@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
   	extend: {
+			backgroundImage: {
+				'radial-dark': 'radial-gradient(circle at top left, #0d1117, #010409)',
+			},
   		fontFamily: {
   			sans: [
   				'Inter',

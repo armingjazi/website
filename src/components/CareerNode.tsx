@@ -87,7 +87,7 @@ const CareerNode = ({
           <text
             className={cn(
               "text-xs font-semibold text-center fill-primary-foreground pointer-events-none",
-              disabled ? "" : "peer-hover:fill-primary",
+              disabled ? "" : "peer-hover:fill-secondary",
             )}
             textAnchor="middle"
             y="5"
@@ -104,7 +104,7 @@ const CareerNode = ({
             width={12}
             height={12}
             className={cn(
-              "pointer-events-none text-primary-foreground peer-hover:text-primary",
+              "pointer-events-none text-primary-foreground peer-hover:text-secondary",
             )}
           >
             <Plus
@@ -121,7 +121,7 @@ const CareerNode = ({
             height={24}
             className={cn(
               "pointer-events-none text-primary-foreground inline-flex content-center justify-items-center",
-              disabled ? "" : "peer-hover:text-primary",
+              disabled ? "" : "peer-hover:text-secondary",
             )}
           >
             <Icon name={data.icon} size={22} strokeWidth={1.5} />

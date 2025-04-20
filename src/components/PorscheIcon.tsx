@@ -9,6 +9,7 @@ const PorscheIcon = ({ size, strokeWidth }: IconProps) => {
       height={size}
       strokeWidth={strokeWidth}
       viewBox="0 0 210 25"
+      fill="white"
       id="svg2641"
     >
       <defs id="defs2643" />

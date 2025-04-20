@@ -56,7 +56,7 @@ const DigitalTwin = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto h-[calc(100vh-8rem)] m-4 bg-accent/75 rounded-lg shadow-lg flex flex-col">
+    <div className="max-w-4xl mx-auto h-[calc(100vh-8rem)] rounded-lg shadow-lg flex flex-col">
       <div className="p-4 border-b">
         <h1 className="text-l font-semibold">
           This is my digital twin. It is informed on my CV and life story and
@@ -89,10 +89,10 @@ const DigitalTwin = () => {
               )}
             </div>
             <div
-              className={`px-4 py-2 rounded-lg max-w-[80%] ${
+              className={`px-4 py-2 rounded-lg max-w-[80%] text-secondary-foreground ${
                 message.role === "user"
-                  ? "bg-secondary text-secondary-foreground"
-                  : "bg-popover-background text-popover-foreground"
+                  ? "bg-secondary/50"
+                  : "bg-transparent"
               }`}
             >
               {message.content}

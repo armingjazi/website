@@ -37,14 +37,14 @@ const ConversationBubble = ({
   }, [description]);
   return (
     <div className={cn(className, "z-50")}>
-      <Avatar className="w-36 h-36 z-10 relative shadow-xl shadow-primary">
+      <Avatar className="w-36 h-36 z-10 relative">
         <AvatarImage
           src="/me-xs.jpg"
           className="border-2 rounded-full border-primary"
         />
         <AvatarFallback>AJ</AvatarFallback>
       </Avatar>
-      <div className="bg-popover-background/85 text-primary rounded-2xl rounded-tl-none border-2 border-primary/20 p-2 ml-32 mr-32 mt-[-48] z-20 relative w-[640px] shadow-2xl shadow-popover-background">
+      <div className="bg-popover-background/85 text-primary rounded-2xl rounded-tl-none border-2 border-primary/20 p-2 ml-32 mr-32 mt-[-48] z-20 relative w-[640px]">
         <TypeWriter
           text={text}
           delay={delay}

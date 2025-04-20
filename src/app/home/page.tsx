@@ -1,95 +1,83 @@
+"use client";
 import React from "react";
-import { ArrowUpRight, BookOpen, BrainCircuit, Coffee, FileUser } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import GithubIcon from "@/components/GithubIcon";
-import LinkedInIcon from "@/components/LinkedInIcon";
-import Image from "next/image";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { Reference } from "@/components/Reference";
+
+const links = [
+  {
+    name: "Armin Jazi",
+    url: "/cv?mode=tabular",
+    img: "/main_cv.png",
+    details:
+      "Engineer, Manager, Artist with a holistic approach to life, continuously growing with the new. Experienced Software Developer with a demonstrated history of working in various fields. Skilled in Computer Science, C++, C#, Java, and web technologies, with a strong analytical and critical thinking focus." +
+      "Manager Helping businesses grow and learn from gross misunderstandings of the contemporary management body of knowledge.\n" +
+      " A dancer, martial artist, and trained movement therapist interested in movement of any kind." +
+      " An enthusiast of quantum mechanics, general relativity, and quantum loop theory." +
+      " Neural network enthusiasts studying the latest trends as they develop" +
+      " A digital experience designer and a digital artist with a focus on the human experience.",
+    tooltip: "Click to see my CV",
+    priority: true,
+  },
+  {
+    name: "Web Docker",
+    url: "https://github.com/OpenReplyDE/web-docker",
+    img: "/webdocker.png",
+    details: "Webdocker is a novel solution for delivering microfrontends in modern web applications. At its core, Webdocker functions as a central registry to which self-contained web fragments (built as web components) can subscribe. These fragments declare their required assets—such as JavaScript or CSS—and Webdocker is responsible for injecting them on demand.",
+    tooltip: "Click to visit the repository",
+  },
+  {
+    name: "Movement Archery",
+    url: "https://movementarchery.com",
+    img: "/movement_archery.jpg",
+    details: "Managing Online Products at Movement Archery, a method inspired by Zen, that highlights the value of practice as a way to improve one's presence within one's own body." +
+      "Combining meditation, dance, acrobatics, philosophy, conditioning and martial arts. It is a practice of creativity. Moving to rediscover the self, its potential and its interaction with the world.",
+    tooltip: "Click to visit the website",
+  },
+  {
+    name: "Wonderground",
+    url: "https://wondergroundcompany.com",
+    img: "/wonderground.jpeg",
+    details: "Collaborating with Wonderground since 2024, bringing technical innovation to dance performance documentation and audience engagement. Crafting their digital presence and enhancing the experience of their performances through digital media.",
+    tooltip: "Click to visit the website",
+  },
+  {
+    name: "Writings",
+    url: "https://medium.com/@armin.gjazi",
+    img: "/medium.jpeg",
+    details: "A collection of my writings on Medium. I write about technology, management, and the intersection of art and technology.",
+    tooltip: "Click to read my articles",
+  },
+  {
+    name: "A Digital Twin",
+    url: "/digital-twin",
+    img: "/digital_twin.png",
+    details: "A prompted LLM acting as my digital twin of my CV.",
+    tooltip: "Click to talk to my digital twin",
+  },
+];
 
 export default function Page() {
-  const links = [
-    {
-      name: "My Digital Twin",
-      url: "/digital-twin",
-      icon: <BrainCircuit className="w-8 h-8" strokeWidth={1.5} />,
-    },
-    {
-      name: "LinkedIn",
-      url: "https://linkedin.com/in/armingjazi",
-      icon: <LinkedInIcon size={32} strokeWidth={1} />,
-    },
-    {
-      name: "Code Portfolio @ GitHub",
-      url: "https://github.com/armingjazi",
-      icon: <GithubIcon size={32} />,
-    },
-    {
-      name: "Author of Web Docker",
-      url: "https://github.com/OpenReplyDE/web-docker",
-      icon: <GithubIcon size={32} />,
-    },
-    {
-      name: "Managing Products @ Movement Archery",
-      url: "https://movementarchery.com",
-      icon: (
-        <Image
-          src="/movement-archery.png"
-          width={32}
-          height={32}
-          alt="movement-archery"
-        />
-      ),
-    },
-    {
-      name: "My Writings @ Radical Thinking",
-      url: "https://radical-thinking.com",
-      icon: <BookOpen className="w-8 h-8" strokeWidth={1.5} />,
-    },
-    {
-      name: "My Writings @ Medium",
-      url: "https://medium.com/@armin.gjazi",
-      icon: <Coffee className="w-8 h-8" strokeWidth={1.5} />,
-    },
-    {
-      name: "CV",
-      url: "/cv?mode=tabular",
-      icon: <FileUser className="w-8 h-8" strokeWidth={1.5} />,
-    },
-  ];
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
-    <div className="min-h-screen bg-transparent flex flex-col items-center justify-center p-4">
-      <div className="max-w-lg w-full rounded-lg shadow-lg p-8 bg-accent/50">
-        <div className="flex flex-row items-center mb-5 space-x-4">
-          <Avatar className="w-24 h-24 z-10 relative shadow-xl shadow-primary">
-            <AvatarImage
-              src="/me-xs.jpg"
-              className="border-2 rounded-full border-primary"
-            />
-            <AvatarFallback>AJ</AvatarFallback>
-          </Avatar>
-          <div className="flex flex-col">
-            <h1 className="text-2xl font-bold">Armin Jazi</h1>
-            <h2 className="text-xl ">Engineering Manager</h2>
-          </div>
-        </div>
-        <div className="space-y-4 pt-3">
-          {links.map((link) => (
-            <a
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between p-4 rounded-lg bg-transparent hover:bg-secondary/10 transition-colors duration-200"
-            >
-              <span className="flex items-center gap-3">
-                {link.icon}
-                <span className="font-medium">{link.name}</span>
-              </span>
-              <ArrowUpRight className="w-5 h-5" />
-            </a>
-          ))}
-        </div>
-      </div>
+    <div>
+      {links.map((link) => (
+        <Reference
+          key={link.name}
+          alt={link.name}
+          title={link.name}
+          src={link.img}
+          url={link.url}
+          details={link.details}
+          priority={link.priority}
+        />
+      ))}
+      <motion.div className="fixed left-0 right-0 h-[5px] bottom-[50px] bg-[#8df0cc]" style={{ scaleX }} />
     </div>
   );
 }

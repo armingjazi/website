@@ -55,7 +55,7 @@ const ConversationBubbleMobile = ({
       )}
     >
       {!minimized ? (
-        <div className="bg-popover-background/85 text-primary rounded-2xl rounded-br-none border-2 border-primary/20 relative shadow-2xl shadow-popover-background p-2 z-20 w-[320px] sm:mr-20 sm:mb-[-20] sm:mt-[-48] ">
+        <div className="bg-popover-background/85 text-primary rounded-2xl rounded-br-none border-2 border-primary/20 relative p-2 z-20 w-[320px] sm:mr-20 sm:mb-[-20] sm:mt-[-48] ">
           <Typewriter
             text={text}
             delay={delay}
@@ -82,7 +82,7 @@ const ConversationBubbleMobile = ({
         </>
       )}
       {!hideAvatar ? (
-        <Avatar className={"z-10 relative shadow-xl shadow-primary w-24 h-24"}>
+        <Avatar className={"z-10 relative shadow-primary w-24 h-24"}>
           <AvatarImage
             src="/me-xs.jpg"
             className="border-2 rounded-full border-primary"
