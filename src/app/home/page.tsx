@@ -16,6 +16,7 @@ const links = [
       " An enthusiast of quantum mechanics, general relativity and neural networks" +
       " A digital experience designer and a digital artist with a focus on the human experience.",
     tooltip: "Click to see my CV",
+    bg: "bg-[#111318]",
   },
   {
     name: "Web Docker",
@@ -23,6 +24,7 @@ const links = [
     img: "/webdocker.png",
     details: "Webdocker is a novel solution for delivering microfrontends in modern web applications. At its core, Webdocker functions as a central registry to which self-contained web fragments (built as web components) can subscribe. These fragments declare their required assets—such as JavaScript or CSS—and Webdocker is responsible for injecting them on demand.",
     tooltip: "Click to visit the repository",
+    bg: "bg-[#020b14]",
   },
   {
     name: "Movement Archery",
@@ -31,6 +33,7 @@ const links = [
     details: "Managing Online Products at Movement Archery, a method inspired by Zen, that highlights the value of practice as a way to improve one's presence within one's own body." +
       "Combining meditation, dance, acrobatics, philosophy, conditioning and martial arts. It is a practice of creativity. Moving to rediscover the self, its potential and its interaction with the world.",
     tooltip: "Click to visit the website",
+    bg: "bg-[#111318]",
   },
   {
     name: "Wonderground",
@@ -38,11 +41,12 @@ const links = [
     img: "/wonderground.jpeg",
     details: "Collaborating with Wonderground since 2024, bringing technical innovation to dance performance documentation and audience engagement. Crafting their digital presence and enhancing the experience of their performances through digital media.",
     tooltip: "Click to visit the website",
+    bg: "bg-[#030303]",
   },
   {
     name: "Writings",
     url: "https://medium.com/@armin.gjazi",
-    img: "/medium.jpeg",
+    img: "/medium.png",
     details: "A collection of my writings on Medium. I write about technology, management, and the intersection of art and technology.",
     tooltip: "Click to read my articles",
   },
@@ -73,6 +77,7 @@ export default function Page() {
           src={link.img}
           url={link.url}
           details={link.details}
+          backgroundColor={link.bg}
         />
       ))}
       <ScrollHint />

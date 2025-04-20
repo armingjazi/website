@@ -11,19 +11,21 @@ export function Reference({
   alt,
   url,
   details,
+  backgroundColor = "bg-[#08101b]",
 }: {
   title: string;
   src: string;
   alt: string;
   url: string;
   details: string;
+  backgroundColor?: string;
 }) {
   const containerRef = useRef(null);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, container: containerRef });
   const y = useParallax(scrollYProgress, 300);
   return (
-    <section ref={containerRef} className="h-screen snap-start flex justify-center items-center relative overflow-hidden">
+    <section ref={containerRef} className={`h-screen snap-start flex justify-center items-center relative overflow-hidden ${backgroundColor}`}>
       <Link
         href={url}
         target="_blank"
@@ -41,13 +43,13 @@ export function Reference({
           transition={{ duration: 0.6, delay: 0.5 }}
         />
       </div>
-      <div className={"flex flex-row"}>
+      <div className="flex flex-row">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           style={{ y }}
-          className="absolute inline-block top-[calc(12%)] md:top-[calc(50%)] m-0 left-[calc(50%_+_20px)] md:left-[calc(50%_+_50px)]"
+          className="absolute inline-block top-[calc(12%)] md:top-[calc(50%)] m-0 left-[calc(50%_+_20px)] md:left-[calc(50%_+_50px)] xl:left-[calc(47%)] xl:px-32"
         >
           <h2 className="text-primary text-[22px] md:text-[48px] lg:text-[64px] xl:text-[72px] leading-[1.2] tracking-wider">
             {title}
