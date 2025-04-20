@@ -54,7 +54,7 @@ const links = [
     name: "A Digital Twin",
     url: "/digital-twin",
     img: "/digital_twin.png",
-    details: "A prompted LLM acting as my digital twin of my CV.",
+    details: "A prompted LLM acting as my digital twin. It is a work in progress, but it is capable of answering questions about me and my work.",
     tooltip: "Click to talk to my digital twin",
   },
 ];
