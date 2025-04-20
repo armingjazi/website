@@ -9,11 +9,10 @@ const links = [
     url: "/cv?mode=tabular",
     img: "/main_cv.png",
     details:
-      "Engineer, Manager, Artist with a holistic approach to life, continuously growing with the new. Experienced Software Developer with a demonstrated history of working in various fields. Skilled in Computer Science, C++, C#, Java, and web technologies, with a strong analytical and critical thinking focus." +
-      "Manager Helping businesses grow and learn from gross misunderstandings of the contemporary management body of knowledge.\n" +
-      " A dancer, martial artist, and trained movement therapist interested in movement of any kind." +
-      " An enthusiast of quantum mechanics, general relativity, and quantum loop theory." +
-      " Neural network enthusiasts studying the latest trends as they develop" +
+      "Engineer, Manager, Artist with a holistic approach to life. Experienced Software Developer with a demonstrated history of working in various fields. Skilled in Computer Science, C++, C#, Java, and web technologies, with a strong on analytical and critical methods." +
+      " Manager supporting businesses grow through contemporary management body of knowledge." +
+      " A trained movement artist interested in movement of any kind." +
+      " An enthusiast of quantum mechanics, general relativity and neural networks" +
       " A digital experience designer and a digital artist with a focus on the human experience.",
     tooltip: "Click to see my CV",
   },

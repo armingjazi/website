@@ -3,7 +3,6 @@ import { useRef } from "react";
 import { useScroll } from "framer-motion";
 import { useParallax } from "@/hooks/useParallax";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 export function Reference({
@@ -48,12 +47,12 @@ export function Reference({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           style={{ y }}
-          className="absolute inline-block top-[calc(50%)] m-0 left-[calc(50%_+_50px)]"
+          className="absolute inline-block top-[calc(20%)] md:top-[calc(50%)] m-0 left-[calc(50%_+_20px)] md:left-[calc(50%_+_50px)]"
         >
-          <h2 className="text-primary text-[50px] md:text-[48px] lg:text-[64px] xl:text-[72px] leading-[1.2] tracking-wider ">
+          <h2 className="text-primary text-[22px] md:text-[48px] lg:text-[64px] xl:text-[72px] leading-[1.2] tracking-wider">
             {title}
           </h2>
-          <p className="px-2 text-white">{details}</p>
+          <p className="pr-2 text-white text-[12px] md:text-[14px]">{details}</p>
         </motion.div>
       </div>
     </section>
