@@ -27,23 +27,6 @@ const links = [
     bg: "bg-[#020b14]",
   },
   {
-    name: "Movement Archery",
-    url: "https://movementarchery.com",
-    img: "/movement_archery.jpg",
-    details: "Managing tech and digital experiences at Movement Archery, a method inspired by Zen, that highlights the value of practice as a way to improve one's presence within one's own body." +
-      "Combining meditation, dance, acrobatics, philosophy, conditioning and martial arts. It is a practice of creativity. Moving to rediscover the self, its potential and its interaction with the world.",
-    tooltip: "Click to visit the website",
-    bg: "bg-[#111318]",
-  },
-  {
-    name: "Wonderground",
-    url: "https://wondergroundcompany.com",
-    img: "/wonderground.jpeg",
-    details: "Collaborating with Wonderground since 2024, bringing technical innovation to dance performance documentation and audience engagement. Crafting their digital presence and enhancing the experience of their performances through digital media.",
-    tooltip: "Click to visit the website",
-    bg: "bg-[#030303]",
-  },
-  {
     name: "Writings",
     url: "https://medium.com/@armin.gjazi",
     img: "/medium.png",
