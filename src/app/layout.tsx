@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Jost } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import { MouseTooltipProvider } from "@/components/MouseTooltip";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +24,11 @@ export const metadata: Metadata = {
   title: "Armin Jazi - Portfolio",
   description: "Armin Jazi's Portfolio",
   icons: {
-    icon:{
+    icon: {
       url: "/favicon.svg",
       type: "image/svg+xml",
-    }
-  }
+    },
+  },
 };
 
 export default function RootLayout({
@@ -37,7 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} antialiased`}
+      >
+        <SpeedInsights />
         <MouseTooltipProvider offset={{ x: 10, y: 20 }}>
           <div className="h-full bg-cover bg-center bg-fixed min-h-screen text-secondary-foreground leading-relaxed tracking-wider bg-radial-dark">
             {children}
