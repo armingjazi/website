@@ -30,7 +30,7 @@ const links = [
     name: "Movement Archery",
     url: "https://movementarchery.com",
     img: "/movement_archery.jpg",
-    details: "Managing Online Products at Movement Archery, a method inspired by Zen, that highlights the value of practice as a way to improve one's presence within one's own body." +
+    details: "Managing tech and digital experiences at Movement Archery, a method inspired by Zen, that highlights the value of practice as a way to improve one's presence within one's own body." +
       "Combining meditation, dance, acrobatics, philosophy, conditioning and martial arts. It is a practice of creativity. Moving to rediscover the self, its potential and its interaction with the world.",
     tooltip: "Click to visit the website",
     bg: "bg-[#111318]",
