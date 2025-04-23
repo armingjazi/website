@@ -9,7 +9,7 @@ export default function Layout({
 }>) {
   return (
     <DescriptionProvider>
-      <div className="sticky right-3 top-3 z-50 bg">
+      <div className="sticky right-3 top-0 z-50">
         <Header />
       </div>
       <div>{children}</div>

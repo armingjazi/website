@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} antialiased bg-radial-dark`}
       >
         <SpeedInsights />
         <MouseTooltipProvider offset={{ x: 10, y: 20 }}>
