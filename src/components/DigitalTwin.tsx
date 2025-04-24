@@ -125,7 +125,7 @@ const DigitalTwin = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary/50"
+            className="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary/50 text-secondary"
           />
           <button
             type="submit"
