@@ -24,20 +24,19 @@ export async function POST(request: Request) {
 
   const messages: Message[] = await request.json();
 
-  const SYSTEM_PROMPT = systemPrompt(100);
+  const SYSTEM_PROMPT = systemPrompt(250);
 
   const chat_messages = messages.filter((message) => message.role !== "system");
 
-  const model = "Mistral-7B-Instruct-v0.3";
-  const space = "mistralai";
+  const model = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free";
   try {
     const response = await fetch(
-      `https://api-inference.huggingface.co/models/${space}/${model}/v1/chat/completions`,
+      "https://api.together.xyz/v1/chat/completions",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.HUGGINGFACE_API_KEY}`,
+          Authorization: `Bearer ${process.env.TOGETHER_API_KEY}`,
         },
         body: JSON.stringify({
           model,
@@ -45,7 +44,6 @@ export async function POST(request: Request) {
             SYSTEM_PROMPT,
             ...chat_messages,
           ],
-          max_tokens: 350,
         }),
       },
     );
@@ -60,7 +58,13 @@ export async function POST(request: Request) {
     }
 
     const data = await response.json();
-    return Response.json({ response: data.choices[0].message.content });
+    // remove everything between <think> and </think>
+    const contentText = data.choices[0].message.content
+      .replace(/<think>[\s\S]*?<\/think>/g, "")
+      .replace(/<br>/g, "\n")
+      .trim();
+    console.log("Response:", contentText);
+    return Response.json({ response: contentText });
   } catch (error) {
     console.error("Error:", error);
     return Response.json(
