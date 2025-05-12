@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FormEvent, useEffect, useRef, useState } from "react";
-import { SendHorizonal, UserRound } from "lucide-react";
+import { SendHorizonal } from "lucide-react";
 import { MeAvatar } from "@/components/Avatar";
 
 interface Message {
