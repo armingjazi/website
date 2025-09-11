@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export function Reference({
+  id,
   title,
   src,
   alt,
@@ -13,6 +14,7 @@ export function Reference({
   details,
   backgroundColor = "bg-[#08101b]",
 }: {
+  id?: string;
   title: string;
   src: string;
   alt: string;
@@ -24,12 +26,13 @@ export function Reference({
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
   return (
-    <section className={`h-screen snap-start flex justify-center items-center relative overflow-hidden ${backgroundColor}`}>
+    <section id={id} className={`h-screen snap-start flex justify-center items-center relative overflow-hidden ${backgroundColor}`}>
       <Link
         href={url}
-        target="_blank"
+        target={url.startsWith("http") ? "_blank" : "_self"}
         rel="noopener noreferrer"
-        className="absolute w-full h-full z-10"
+        className="absolute w-full h-full z-10 left-0 md:left-[100px]"
+        style={{ width: "calc(100% - 100px)" }}
       />
       <div ref={ref} className="overflow-hidden">
         <motion.img

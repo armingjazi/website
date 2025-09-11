@@ -6,6 +6,7 @@ import ScrollHint from "@/components/ScrollHint";
 
 const links = [
   {
+    id: "armin-jazi",
     name: "Armin Jazi",
     url: "/cv?mode=tabular",
     img: "/main_cv.png",
@@ -19,6 +20,7 @@ const links = [
     bg: "bg-[#111318]",
   },
   {
+    id: "web-docker",
     name: "Web Docker",
     url: "https://github.com/OpenReplyDE/web-docker",
     img: "/webdocker.png",
@@ -27,6 +29,7 @@ const links = [
     bg: "bg-[#020b14]",
   },
   {
+    id: "writings",
     name: "Writings",
     url: "https://medium.com/@armin.gjazi",
     img: "/medium.png",
@@ -34,6 +37,7 @@ const links = [
     tooltip: "Click to read my articles",
   },
   {
+    id: "digital-twin",
     name: "A Digital Twin",
     url: "/digital-twin",
     img: "/digital_twin.png",
@@ -54,7 +58,8 @@ export default function Page() {
     <div className='relative'>
       {links.map((link) => (
         <Reference
-          key={link.name}
+          key={link.id}
+          id={link.id}
           alt={link.name}
           title={link.name}
           src={link.img}
