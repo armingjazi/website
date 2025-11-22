@@ -28,7 +28,7 @@ export async function POST(request: Request) {
 
   const chat_messages = messages.filter((message) => message.role !== "system");
 
-  const model = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free";
+  const model = "ServiceNow-AI/Apriel-1.5-15b-Thinker";
   try {
     const response = await fetch(
       "https://api.together.xyz/v1/chat/completions",
