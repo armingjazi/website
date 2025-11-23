@@ -22,11 +22,13 @@ export async function POST(request: Request) {
     return Response.json({ error: "Rate limit exceeded" }, { status: 429 });
   }
 
-  const messages: Message[] = await request.json();
+  const json: { messages: Message[] } = await request.json();
 
   const SYSTEM_PROMPT = systemPrompt(250);
 
-  const chat_messages = messages.filter((message) => message.role !== "system");
+  const chat_messages = json.messages.filter(
+    (message) => message.role !== "system",
+  );
 
   const model = "ServiceNow-AI/Apriel-1.5-15b-Thinker";
   try {
@@ -40,10 +42,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           model,
-          messages: [
-            SYSTEM_PROMPT,
-            ...chat_messages,
-          ],
+          messages: [SYSTEM_PROMPT, ...chat_messages],
         }),
       },
     );

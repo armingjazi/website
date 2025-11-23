@@ -2,7 +2,7 @@ export const links = [
   {
     id: "armin-jazi",
     name: "Armin Jazi",
-    url: "/cv?mode=tabular",
+    url: "/digital-twin",
     img: "/main_cv.png",
     details:
       "Engineer, Manager, Artist with a holistic approach to life. Experienced Software Developer with a demonstrated history of working in various fields. Skilled in Computer Science, C++, C#, Java, and web technologies, with a strong on analytical and critical methods." +
