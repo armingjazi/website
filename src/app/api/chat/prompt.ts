@@ -1,4 +1,4 @@
-const systemPrompt = (max_token: number = 125) => {
+const systemPrompt = () => {
   return {
     role: "system",
     content: `

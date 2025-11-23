@@ -28,7 +28,6 @@ import { MarkdownText } from "@/components/assistant-ui/markdown-text";
 import { ToolFallback } from "@/components/assistant-ui/tool-fallback";
 import { TooltipIconButton } from "@/components/assistant-ui/tooltip-icon-button";
 import {
-  ComposerAddAttachment,
   ComposerAttachments,
   UserMessageAttachments,
 } from "@/components/assistant-ui/attachment";
@@ -130,22 +129,26 @@ const ThreadSuggestions: FC = () => {
         {
           title: "Engineering Leadership",
           label: "Tell me about your management experience",
-          action: "Tell me about your experience as an Engineering Manager and how you've led distributed teams",
+          action:
+            "Tell me about your experience as an Engineering Manager and how you've led distributed teams",
         },
         {
           title: "SaaS & Cloud",
           label: "What's your experience with scaling platforms?",
-          action: "What's your experience building and scaling SaaS products on cloud infrastructure?",
+          action:
+            "What's your experience building and scaling SaaS products on cloud infrastructure?",
         },
         {
           title: "Tech Stack",
           label: "What languages and frameworks do you use?",
-          action: "What programming languages, frameworks, and tools do you specialize in?",
+          action:
+            "What programming languages, frameworks, and tools do you specialize in?",
         },
         {
           title: "Career Path",
           label: "How did you transition to engineering management?",
-          action: "Can you walk me through your career journey from software engineer to engineering manager?",
+          action:
+            "Can you walk me through your career journey from software engineer to engineering manager?",
         },
       ].map((suggestedAction, index) => (
         <m.div

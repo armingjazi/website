@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
   const json: { messages: Message[] } = await request.json();
 
-  const SYSTEM_PROMPT = systemPrompt(250);
+  const SYSTEM_PROMPT = systemPrompt();
 
   const chat_messages = json.messages.filter(
     (message) => message.role !== "system",
