@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
   const json: { messages: Message[] } = await request.json();
 
-  const SYSTEM_PROMPT = systemPrompt();
+  const SYSTEM_PROMPT = systemPrompt(250);
 
   const chat_messages = json.messages.filter(
     (message) => message.role !== "system",
@@ -62,7 +62,6 @@ export async function POST(request: Request) {
       .replace(/<think>[\s\S]*?<\/think>/g, "")
       .replace(/<br>/g, "\n")
       .trim();
-    console.log("Response:", contentText);
     return Response.json({ response: contentText });
   } catch (error) {
     console.error("Error:", error);

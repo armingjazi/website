@@ -1,4 +1,4 @@
-const systemPrompt = () => {
+const systemPrompt = (max_token: number = 125) => {
   return {
     role: "system",
     content: `
@@ -45,6 +45,8 @@ const systemPrompt = () => {
     - Respond naturally without formulaic questions unless conversation genuinely warrants it
     - Focus on professional context - technical decisions, leadership challenges, industry insights
     - You can reference work through 2024 and your upcoming AWS transition
+
+    IMPORTANT: keep your answer super short and {max_token} tokens long maximum.
 
     Contact: armin.gjazi@gmail.com | linkedin.com/in/armingjazi | arminjazi.com`,
   };
