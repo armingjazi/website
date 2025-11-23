@@ -39,11 +39,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} antialiased bg-radial-dark`}
+        className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} antialiased bg-background`}
       >
         <SpeedInsights />
         <MouseTooltipProvider offset={{ x: 10, y: 20 }}>
-          <div className="h-full bg-cover bg-center bg-fixed min-h-screen text-secondary-foreground leading-relaxed tracking-wider bg-radial-dark">
+          <div className="h-full bg-cover bg-center bg-fixed min-h-screen text-secondary-foreground leading-relaxed tracking-wider bg-background">
             {children}
           </div>
         </MouseTooltipProvider>
