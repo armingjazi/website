@@ -45,7 +45,7 @@ const DigitalTwinAdapter: ChatModelAdapter = {
 
 const DigitalTwinContent = () => {
   return (
-    <div className="max-w-4xl mx-auto h-[calc(100vh-8rem)] rounded-lg shadow-lg overflow-hidden bg-background">
+    <div className="max-w-4xl mx-auto rounded-lg shadow-lg bg-background">
       <Thread />
     </div>
   );
